@@ -2,12 +2,13 @@ import Image from "next/image";
 import { CALBAR } from "@/lib/site";
 
 export default function AuthorByline({
-  dark = false,
+  dark = true,
   date,
 }: {
   dark?: boolean;
   date?: string;
 }) {
+  void dark; // single dark theme now; prop kept so call sites stay stable
   return (
     <div className="flex items-center gap-3">
       <Image
@@ -15,23 +16,17 @@ export default function AuthorByline({
         alt="Attorney Charles P. Farris"
         width={44}
         height={44}
-        className="h-11 w-11 rounded-full border-2 border-gold-500 object-cover"
+        className="h-11 w-11 rounded-full border-2 border-yellow-500 object-cover"
       />
       <div className="text-sm leading-tight">
-        <p className={dark ? "font-semibold text-white" : "font-semibold text-navy-900"}>
-          By Charles P. Farris
-        </p>
-        <p className={dark ? "text-grey-200/70" : "text-grey-500"}>
+        <p className="font-semibold text-white">By Charles P. Farris</p>
+        <p className="text-zinc-500">
           Criminal Defense Attorney ·{" "}
           <a
             href={CALBAR.profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={
-              dark
-                ? "underline decoration-gold-500 underline-offset-2 hover:text-gold-400"
-                : "underline decoration-gold-500 underline-offset-2 hover:text-navy-900"
-            }
+            className="underline decoration-yellow-500 underline-offset-2 hover:text-yellow-500"
           >
             CA State Bar #{CALBAR.number}
           </a>

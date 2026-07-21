@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 import { SITE } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const anton = Anton({
+  weight: "400",
+  variable: "--font-anton",
   subsets: ["latin"],
 });
 
@@ -93,7 +94,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${archivo.variable} ${anton.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script

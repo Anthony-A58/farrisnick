@@ -108,13 +108,12 @@ export default async function Page({ params }: Props) {
     return (
       <>
         {/* H1 kept identical to the WordPress baseline */}
-        <div className="relative overflow-hidden bg-navy-950 py-12 text-white lg:py-16">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-          <div className="relative mx-auto max-w-6xl px-4 lg:px-6">
-            <h1 className="font-display text-3xl font-bold leading-tight lg:text-5xl">
+        <div className="relative overflow-hidden border-b border-hairline bg-black py-14 text-white lg:py-20">
+          <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+            <h1 className="cutout max-w-4xl text-4xl lg:text-6xl">
               Recent Victories
             </h1>
-            <p className="mt-4 max-w-2xl text-grey-200/90">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
               Real cases, real outcomes: dismissals, reductions, and second
               chances won for our clients across Orange County and Los Angeles.
             </p>

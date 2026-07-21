@@ -11,28 +11,27 @@ export function PageHero({
   sub: string;
 }) {
   return (
-    <div className="relative overflow-hidden bg-navy-950 py-12 text-white lg:py-16">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-      <div className="relative mx-auto max-w-6xl px-4 lg:px-6">
+    <div className="relative overflow-hidden border-b border-hairline bg-black py-14 text-white lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         {kicker && (
-          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gold-400">
+          <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
             {kicker}
           </p>
         )}
-        <h1 className="font-display mt-2 max-w-3xl text-3xl font-bold leading-tight lg:text-5xl">
-          {h1}
-        </h1>
-        <p className="mt-4 max-w-2xl text-grey-200/90">{sub}</p>
-        <div className="mt-7 flex flex-wrap items-center gap-3">
+        <h1 className="cutout max-w-4xl text-4xl lg:text-6xl">{h1}</h1>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
+          {sub}
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
             href={SITE.phoneHref}
-            className="rounded bg-gold-500 px-6 py-3.5 font-bold text-navy-950 transition hover:bg-gold-400"
+            className="bg-yellow-500 px-6 py-3.5 font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
           >
             Call {SITE.phone}
           </a>
           <Link
             href="/contact/"
-            className="rounded border border-grey-200/40 px-6 py-3.5 font-semibold text-white transition hover:border-gold-400 hover:text-gold-400"
+            className="border-2 border-zinc-600 px-6 py-3 font-bold uppercase tracking-[0.03em] text-white transition hover:border-yellow-500 hover:text-yellow-500"
           >
             Free Case Review
           </Link>
@@ -50,26 +49,26 @@ export function FaqBlock({
   faqs: { q: string; a: string }[];
 }) {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-12 lg:px-6 lg:py-16">
-      <h2 className="font-display text-2xl font-bold text-navy-900 lg:text-3xl">
+    <section className="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+      <h2 className="font-display text-3xl text-white lg:text-4xl">
         {heading}
       </h2>
       <div className="mt-6 space-y-3">
         {faqs.map((f) => (
           <details
             key={f.q}
-            className="group rounded border border-grey-200 bg-white open:border-gold-500"
+            className="group border border-neutral-800 border-l-4 border-l-yellow-500 bg-coal"
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-semibold text-navy-900 [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-lg font-extrabold text-white [&::-webkit-details-marker]:hidden">
               {f.q}
               <span
-                className="text-gold-500 transition-transform group-open:rotate-45"
+                className="font-display text-2xl text-yellow-500 transition-transform group-open:rotate-45"
                 aria-hidden
               >
                 +
               </span>
             </summary>
-            <p className="px-5 pb-5 leading-relaxed text-grey-700">{f.a}</p>
+            <p className="px-5 pb-5 leading-relaxed text-zinc-400">{f.a}</p>
           </details>
         ))}
       </div>
@@ -79,25 +78,25 @@ export function FaqBlock({
 
 export function CtaBand({ heading }: { heading: string }) {
   return (
-    <section className="bg-navy-950 py-14 text-white">
-      <div className="mx-auto max-w-6xl px-4 text-center lg:px-6">
-        <h2 className="font-display mx-auto max-w-3xl text-2xl font-bold leading-tight lg:text-3xl">
+    <section className="border-t border-hairline bg-black py-16 text-white">
+      <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
+        <h2 className="cutout mx-auto max-w-3xl text-4xl lg:text-5xl">
           {heading}
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-grey-200/80">
+        <p className="mx-auto mt-5 max-w-xl text-zinc-300">
           Free, confidential phone consultation any hour, any day. Payment
           plans available.
         </p>
-        <div className="mt-7 flex justify-center gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href={SITE.phoneHref}
-            className="rounded bg-gold-500 px-6 py-3.5 font-bold text-navy-950 transition hover:bg-gold-400"
+            className="bg-yellow-500 px-6 py-3.5 font-display text-xl text-night transition hover:bg-yellow-300"
           >
             Call {SITE.phone}
           </a>
           <Link
             href="/contact/"
-            className="rounded border border-grey-200/40 px-6 py-3.5 font-semibold text-white transition hover:border-gold-400 hover:text-gold-400"
+            className="border-2 border-zinc-600 px-6 py-3.5 font-bold uppercase tracking-[0.03em] text-white transition hover:border-yellow-500 hover:text-yellow-500"
           >
             Free Case Review
           </Link>

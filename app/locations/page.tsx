@@ -82,8 +82,8 @@ export default function LocationsPage() {
         h1="Locations We Serve"
         sub="Criminal defense across Orange County, Los Angeles County, and the San Fernando Valley from offices in Aliso Viejo and Burbank."
       />
-      <section className="mx-auto max-w-6xl px-4 py-12 lg:px-6 lg:py-16">
-        <h2 className="font-display text-2xl font-bold text-navy-900 lg:text-3xl">
+      <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+        <h2 className="font-display text-2xl leading-[0.98] text-white lg:text-3xl">
           County-Wide Defense
         </h2>
         <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -96,14 +96,14 @@ export default function LocationsPage() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="block rounded border-2 border-gold-500 bg-white px-4 py-3 text-sm font-semibold text-navy-900 transition hover:bg-navy-900 hover:text-white"
+                className="block border-2 border-yellow-500 bg-coal px-4 py-3 text-sm font-semibold text-white transition hover:bg-yellow-500 hover:text-night"
               >
                 {l.label}
               </Link>
             </li>
           ))}
         </ul>
-        <h2 className="font-display mt-12 text-2xl font-bold text-navy-900 lg:text-3xl">
+        <h2 className="font-display mt-12 text-2xl leading-[0.98] text-white lg:text-3xl">
           Orange County
         </h2>
         <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -111,14 +111,14 @@ export default function LocationsPage() {
             <li key={l.slug}>
               <Link
                 href={`/${l.slug}/`}
-                className="block rounded border border-grey-200 bg-white px-4 py-3 text-sm font-semibold text-navy-900 transition hover:border-gold-500"
+                className="block border border-neutral-800 bg-coal px-4 py-3 text-sm font-semibold text-zinc-200 transition hover:border-yellow-500 hover:text-yellow-500"
               >
                 {l.city}
               </Link>
             </li>
           ))}
         </ul>
-        <h2 className="font-display mt-12 text-2xl font-bold text-navy-900 lg:text-3xl">
+        <h2 className="font-display mt-12 text-2xl leading-[0.98] text-white lg:text-3xl">
           Los Angeles County & Beyond
         </h2>
         <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -127,7 +127,7 @@ export default function LocationsPage() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="block rounded border border-grey-200 bg-white px-4 py-3 text-sm font-semibold text-navy-900 transition hover:border-gold-500"
+                  className="block border border-neutral-800 bg-coal px-4 py-3 text-sm font-semibold text-zinc-200 transition hover:border-yellow-500 hover:text-yellow-500"
                 >
                   {l.label}
                 </Link>

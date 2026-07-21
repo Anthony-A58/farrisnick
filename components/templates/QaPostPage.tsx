@@ -46,42 +46,41 @@ export default function QaPostPage({ post }: { post: QaPost }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="relative overflow-hidden bg-navy-950 py-12 text-white lg:py-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 lg:px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gold-400">
+      <div className="relative overflow-hidden border-b border-hairline bg-black py-12 text-white lg:py-16">
+        <div className="relative mx-auto max-w-4xl px-4 lg:px-8">
+          <p className="text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
             Asked &amp; Answered · {post.category}
           </p>
-          <h1 className="font-display mt-2 text-3xl font-bold leading-tight lg:text-4xl">
+          <h1 className="cutout mt-4 text-3xl lg:text-5xl">
             {post.h1}
           </h1>
-          <div className="mt-5">
+          <div className="mt-6">
             <AuthorByline dark date={post.datePublished} />
           </div>
         </div>
       </div>
 
-      <article className="mx-auto max-w-4xl px-4 py-10 lg:px-6 lg:py-14">
+      <article className="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-14">
         {/* The question, styled like the forum post it came from */}
-        <figure className="rounded border-l-4 border-grey-200 bg-grey-100 p-6">
-          <figcaption className="text-sm font-semibold uppercase tracking-[0.12em] text-grey-500">
+        <figure className="border border-neutral-800 border-l-4 border-l-zinc-600 bg-coal-deep p-6">
+          <figcaption className="text-sm font-extrabold uppercase tracking-[0.12em] text-zinc-500">
             The question, {post.question.source}
           </figcaption>
-          <blockquote className="mt-3 italic leading-relaxed text-grey-700">
+          <blockquote className="mt-3 italic leading-relaxed text-zinc-300">
             {post.question.text}
           </blockquote>
-          <p className="mt-3 text-xs text-grey-500">
+          <p className="mt-3 text-xs text-zinc-500">
             Paraphrased and anonymized. We answer questions like this one every
             week on free consultation calls.
           </p>
         </figure>
 
         {/* Direct answer up top */}
-        <div className="mt-8 rounded border-2 border-gold-500 bg-white p-6">
-          <h2 className="font-display text-xl font-bold text-navy-900">
+        <div className="mt-8 border border-neutral-800 border-l-4 border-l-yellow-500 bg-coal p-6">
+          <h2 className="font-display text-xl text-white">
             The Short Answer
           </h2>
-          <p className="mt-3 leading-relaxed text-grey-700">{post.tldr}</p>
+          <p className="mt-3 leading-relaxed text-zinc-400">{post.tldr}</p>
         </div>
 
         <Image
@@ -89,17 +88,17 @@ export default function QaPostPage({ post }: { post: QaPost }) {
           alt={post.h1}
           width={1200}
           height={800}
-          className="mt-10 w-full rounded object-cover"
+          className="mt-10 w-full object-cover"
           sizes="(min-width: 1024px) 56rem, 100vw"
         />
 
         {post.sections.map((s) => (
           <section key={s.heading} className="mt-10">
-            <h2 className="font-display text-2xl font-bold leading-tight text-navy-900 lg:text-3xl">
+            <h2 className="font-display text-2xl leading-[0.98] text-white lg:text-3xl">
               {s.heading}
             </h2>
             {s.body.map((p) => (
-              <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-grey-700">
+              <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-zinc-400">
                 {p}
               </p>
             ))}
@@ -107,10 +106,10 @@ export default function QaPostPage({ post }: { post: QaPost }) {
               <ul className="mt-4 space-y-3">
                 {s.list.map((item) => (
                   <li key={item.slice(0, 40)} className="flex gap-3">
-                    <span className="mt-0.5 shrink-0 font-bold text-gold-500" aria-hidden>
+                    <span className="mt-0.5 shrink-0 font-bold text-yellow-500" aria-hidden>
                       ✓
                     </span>
-                    <span className="leading-relaxed text-grey-700">{item}</span>
+                    <span className="leading-relaxed text-zinc-400">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -118,14 +117,14 @@ export default function QaPostPage({ post }: { post: QaPost }) {
           </section>
         ))}
 
-        <div className="mt-10 rounded bg-navy-900 p-6 text-white">
-          <h2 className="font-display text-lg font-bold">Keep Reading</h2>
+        <div className="mt-10 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal p-6 text-white">
+          <h2 className="font-display text-lg text-white">Keep Reading</h2>
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
             {post.related.map((r) => (
               <li key={r.href}>
                 <Link
                   href={r.href}
-                  className="text-sm text-grey-200/90 underline decoration-gold-500 underline-offset-4 hover:text-gold-400"
+                  className="text-sm text-zinc-300 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
                 >
                   {r.label}
                 </Link>
@@ -134,7 +133,7 @@ export default function QaPostPage({ post }: { post: QaPost }) {
           </ul>
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-grey-500">
+        <p className="mt-8 text-xs leading-relaxed text-zinc-500">
           This article is attorney advertising and general information, not
           legal advice about your specific situation, and reading it does not
           create an attorney-client relationship. Every case is different. For

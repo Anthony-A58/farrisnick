@@ -109,13 +109,12 @@ export default function PracticeHub() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="relative overflow-hidden bg-navy-950 py-12 text-white lg:py-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 lg:px-6">
-          <h1 className="font-display text-3xl font-bold leading-tight lg:text-5xl">
+      <div className="relative overflow-hidden border-b border-hairline bg-black py-14 text-white lg:py-20">
+        <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+          <h1 className="cutout max-w-4xl text-4xl lg:text-6xl">
             Practice Areas
           </h1>
-          <p className="mt-4 max-w-2xl text-grey-200/90">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             Farris Law Firm defends the full range of criminal matters across
             Orange County, Los Angeles County, and the San Fernando Valley. Free
             phone consultations 24/7/365, payment plans available.
@@ -123,11 +122,11 @@ export default function PracticeHub() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2">
           {GROUPS.map((g) => (
             <div key={g.heading}>
-              <h2 className="font-display border-b border-grey-200 pb-2 text-xl font-bold text-navy-900">
+              <h2 className="font-display border-b border-hairline pb-2 text-xl text-white">
                 {g.heading}
               </h2>
               <ul className="mt-4 space-y-2">
@@ -135,12 +134,12 @@ export default function PracticeHub() {
                   <li key={it.href}>
                     <Link
                       href={it.href}
-                      className="group flex items-center gap-2 text-grey-700 transition hover:text-navy-900"
+                      className="group flex items-center gap-2 text-zinc-400 transition hover:text-white"
                     >
-                      <span className="text-gold-500" aria-hidden>
+                      <span className="text-yellow-500" aria-hidden>
                         &rsaquo;
                       </span>
-                      <span className="underline decoration-transparent underline-offset-4 transition group-hover:decoration-gold-500">
+                      <span className="underline decoration-transparent underline-offset-4 transition group-hover:decoration-yellow-500">
                         {it.label}
                       </span>
                     </Link>

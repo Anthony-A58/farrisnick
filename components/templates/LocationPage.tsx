@@ -64,18 +64,18 @@ export default function LocationPage({ loc }: { loc: LocationEntry }) {
         sub="Free phone consultations 24/7/365. Payment plans available."
       />
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:px-6 lg:py-16">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:px-8 lg:py-16">
         <div>
           {loc.intro.map((p) => (
-            <p key={p.slice(0, 40)} className="mb-4 leading-relaxed text-grey-700">
+            <p key={p.slice(0, 40)} className="mb-4 leading-relaxed text-zinc-400">
               {p}
             </p>
           ))}
-          <h2 className="font-display mt-8 text-2xl font-bold text-navy-900 lg:text-3xl">
+          <h2 className="font-display mt-8 text-2xl leading-[0.98] text-white lg:text-3xl">
             {loc.local.heading}
           </h2>
           {loc.local.body.map((p) => (
-            <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-grey-700">
+            <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-zinc-400">
               {p}
             </p>
           ))}
@@ -86,30 +86,30 @@ export default function LocationPage({ loc }: { loc: LocationEntry }) {
             alt={`Criminal defense representation in ${loc.city}, California`}
             width={640}
             height={427}
-            className="w-full rounded object-cover"
+            className="w-full object-cover"
             sizes="(min-width: 1024px) 38vw, 100vw"
           />
-          <div className="mt-6 rounded border-2 border-gold-500 bg-white p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-grey-500">
+          <div className="mt-6 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal p-6">
+            <p className="text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
               Your Courthouse
             </p>
-            <h3 className="font-display mt-1 text-xl font-bold text-navy-900">
+            <h3 className="font-display mt-1 text-xl text-white">
               {loc.courthouse.name}
             </h3>
-            <p className="mt-1 text-sm text-grey-700">{loc.courthouse.address}</p>
-            <p className="mt-3 text-sm leading-relaxed text-grey-500">
+            <p className="mt-1 text-sm text-zinc-300">{loc.courthouse.address}</p>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-500">
               {loc.courthouse.note}
             </p>
           </div>
-          <div className="mt-6 rounded bg-navy-900 p-6 text-white">
-            <h3 className="font-display text-lg font-bold">
+          <div className="mt-6 border border-neutral-800 bg-coal-deep p-6 text-white">
+            <h3 className="font-display text-lg">
               {office.label} Office
             </h3>
             <a
               href={office.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 block text-sm text-grey-200/90 hover:text-gold-400"
+              className="mt-2 block text-sm text-zinc-300 hover:text-yellow-300"
             >
               {office.street}
               <br />
@@ -117,7 +117,7 @@ export default function LocationPage({ loc }: { loc: LocationEntry }) {
             </a>
             <a
               href={SITE.phoneHref}
-              className="mt-3 inline-block rounded bg-gold-500 px-4 py-2 text-sm font-bold text-navy-950 hover:bg-gold-400"
+              className="mt-3 inline-block bg-yellow-500 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
             >
               {SITE.phone}
             </a>
@@ -125,9 +125,9 @@ export default function LocationPage({ loc }: { loc: LocationEntry }) {
         </aside>
       </section>
 
-      <section className="bg-grey-100 py-12 lg:py-16">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
-          <h2 className="font-display text-2xl font-bold text-navy-900 lg:text-3xl">
+      <section className="border-y border-hairline bg-coal-deep py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="font-display text-2xl leading-[0.98] text-white lg:text-3xl">
             Cases We Defend in {loc.city}
           </h2>
           <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -135,7 +135,7 @@ export default function LocationPage({ loc }: { loc: LocationEntry }) {
               <li key={p.href}>
                 <Link
                   href={p.href}
-                  className="block rounded border border-grey-200 bg-white px-4 py-3 text-sm font-semibold text-navy-900 transition hover:border-gold-500"
+                  className="block border border-neutral-800 bg-coal px-4 py-3 text-sm font-semibold text-zinc-200 transition hover:border-yellow-500 hover:text-yellow-500"
                 >
                   {p.label}
                 </Link>

@@ -67,32 +67,32 @@ export default function PageBody({
     : null;
   return (
     <>
-      <div className="bg-navy-900 py-10 text-white lg:py-14">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
-          {isHome ? (
-            <h1 className="font-display max-w-3xl text-3xl font-bold leading-tight lg:text-5xl">
-              {page.h1}
-            </h1>
-          ) : (
-            <h1 className="font-display max-w-3xl text-3xl font-bold leading-tight lg:text-4xl">
-              {page.h1 || page.title}
-            </h1>
-          )}
-          <div className="mt-5 flex flex-wrap items-center gap-3">
+      <div className="border-b border-hairline bg-black py-12 text-white lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h1
+            className={
+              isHome
+                ? "cutout max-w-4xl text-4xl lg:text-6xl"
+                : "cutout max-w-4xl text-3xl lg:text-5xl"
+            }
+          >
+            {page.h1 || page.title}
+          </h1>
+          <div className="mt-7 flex flex-wrap items-center gap-4">
             <a
               href={SITE.phoneHref}
-              className="rounded bg-gold-500 px-5 py-2.5 font-bold text-navy-950 transition hover:bg-gold-400"
+              className="bg-yellow-500 px-5 py-2.5 font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
             >
               Call {SITE.phone}
             </a>
-            <span className="text-sm text-grey-200/80">
+            <span className="text-sm text-zinc-400">
               Free phone consultations 24/7/365. Payment plans available.
             </span>
           </div>
         </div>
       </div>
 
-      <article className="mx-auto max-w-4xl px-4 py-10 lg:px-6 lg:py-14">
+      <article className="mx-auto max-w-4xl px-4 py-10 lg:px-8 lg:py-14">
         {breadcrumbLd && (
           <script
             type="application/ld+json"
@@ -106,26 +106,26 @@ export default function PageBody({
           />
         )}
         {isBlogArticle && (
-          <div className="mb-8 border-b border-grey-200 pb-6">
-            <AuthorByline />
+          <div className="mb-8 border-b border-hairline pb-6">
+            <AuthorByline dark />
           </div>
         )}
         {isBlogArticle && BLOG_TLDR[page.path.split("/")[2]] && (
-          <div className="mb-10 rounded border-2 border-gold-500 bg-white p-6">
-            <h2 className="font-display text-xl font-bold text-navy-900">
+          <div className="mb-10 border border-neutral-800 border-l-4 border-l-yellow-500 bg-coal p-6">
+            <h2 className="font-display text-xl text-white">
               The Short Answer
             </h2>
-            <p className="mt-3 leading-relaxed text-grey-700">
+            <p className="mt-3 leading-relaxed text-zinc-400">
               {BLOG_TLDR[page.path.split("/")[2]]}
             </p>
           </div>
         )}
         {practiceTldr && (
-          <div className="mb-10 rounded border-2 border-gold-500 bg-white p-6">
-            <h2 className="font-display text-xl font-bold text-navy-900">
+          <div className="mb-10 border border-neutral-800 border-l-4 border-l-yellow-500 bg-coal p-6">
+            <h2 className="font-display text-xl text-white">
               The Short Answer
             </h2>
-            <p className="mt-3 leading-relaxed text-grey-700">{practiceTldr}</p>
+            <p className="mt-3 leading-relaxed text-zinc-400">{practiceTldr}</p>
           </div>
         )}
         {/* Legacy WordPress markup gets normalized by the browser, which
@@ -138,26 +138,26 @@ export default function PageBody({
         />
       </article>
 
-      <section className="bg-grey-100">
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-4 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-6">
+      <section className="border-t border-hairline bg-coal">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-4 px-4 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
-            <h2 className="font-display text-2xl font-bold text-navy-900">
+            <h2 className="font-display text-2xl text-white">
               Charged with a crime? Talk to a defense attorney tonight.
             </h2>
-            <p className="mt-1 text-grey-500">
+            <p className="mt-1 text-zinc-500">
               Free, confidential phone consultation any hour, any day.
             </p>
           </div>
           <div className="flex gap-3">
             <a
               href={SITE.phoneHref}
-              className="rounded bg-navy-900 px-5 py-3 font-bold text-white transition hover:bg-navy-800"
+              className="border-2 border-zinc-600 px-5 py-3 font-bold text-white transition hover:border-yellow-500 hover:text-yellow-500"
             >
               {SITE.phone}
             </a>
             <Link
               href="/contact/"
-              className="rounded bg-gold-500 px-5 py-3 font-bold text-navy-950 transition hover:bg-gold-400"
+              className="bg-yellow-500 px-5 py-3 font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
             >
               Free Case Review
             </Link>

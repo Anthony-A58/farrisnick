@@ -1,39 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --navy-950: #081729;
-  --navy-900: #0b1f3a;
-  --navy-800: #122b4e;
-  --navy-700: #1b3a66;
-  --gold-500: #f0b323;
-  --gold-400: #f7c548;
-  --grey-100: #f4f6f8;
-  --grey-200: #e6eaef;
-  --grey-500: #6b7686;
-  --grey-700: #3d4654;
-  --ink: #16202e;
+  --night: #0a0a0a;
+  --coal: #141414;
+  --coal-deep: #0f0f0f;
+  --hairline: #1f1f1f;
 }
 
 @theme inline {
-  --color-navy-950: var(--navy-950);
-  --color-navy-900: var(--navy-900);
-  --color-navy-800: var(--navy-800);
-  --color-navy-700: var(--navy-700);
-  --color-gold-500: var(--gold-500);
-  --color-gold-400: var(--gold-400);
-  --color-grey-100: var(--grey-100);
-  --color-grey-200: var(--grey-200);
-  --color-grey-500: var(--grey-500);
-  --color-grey-700: var(--grey-700);
-  --color-ink: var(--ink);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
+  --color-night: var(--night);
+  --color-coal: var(--coal);
+  --color-coal-deep: var(--coal-deep);
+  --color-hairline: var(--hairline);
+  --font-sans: var(--font-archivo);
+  --font-display: var(--font-anton);
 }
 
 body {
-  background: #ffffff;
-  color: var(--ink);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background: var(--night);
+  color: #a1a1aa;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anton ships a single 400 weight and is designed for uppercase display
+   setting; enforce both so no element ever renders faux-bold Anton. */
+.font-display {
+  font-family: var(--font-anton), sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Signature "video in letters" headline: striped gradient clipped to the
+   glyphs with a slow pan. Zero JS; collapses to a static fill under
+   reduced motion. */
+@keyframes pan {
+  to {
+    background-position: 600px 300px;
+  }
+}
+.cutout {
+  font-family: var(--font-anton), sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  background: repeating-linear-gradient(
+    115deg,
+    #e4e4e7,
+    #e4e4e7 8px,
+    #a1a1aa 8px,
+    #a1a1aa 16px
+  );
+  background-size: 300px 200px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: pan 12s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cutout {
+    animation: none;
+  }
 }
 
 /* Victories marquee: the page's single marquee. Transform-only animation,
@@ -63,28 +92,33 @@ body {
 }
 
 /* Migrated WordPress content. Kept verbatim for SEO parity; these rules make
-   it read cleanly inside the new shell. */
+   it read cleanly inside the dark shell. */
 .wp-content {
   font-size: 1.0625rem;
   line-height: 1.75;
-  color: var(--grey-700);
+  color: #a1a1aa;
 }
 .wp-content h2,
 .wp-content h3,
 .wp-content h4 {
-  font-family: var(--font-playfair), Georgia, serif;
-  color: var(--navy-900);
-  line-height: 1.25;
-  margin: 2rem 0 0.875rem;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 2.25rem 0 0.875rem;
 }
 .wp-content h2 {
+  font-family: var(--font-anton), sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
   font-size: 1.75rem;
+  letter-spacing: 0.01em;
 }
 .wp-content h3 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 .wp-content h4 {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
 }
 .wp-content p {
   margin: 0 0 1.125rem;
@@ -103,27 +137,29 @@ body {
 .wp-content li {
   margin-bottom: 0.4rem;
 }
+.wp-content li::marker {
+  color: #eab308;
+}
 .wp-content a {
-  color: var(--navy-700);
+  color: #eab308;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: var(--gold-500);
+  text-decoration-color: rgba(234, 179, 8, 0.5);
 }
 .wp-content a:hover {
-  color: var(--navy-900);
+  color: #fde047;
 }
 .wp-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
   margin: 1.25rem 0;
 }
 .wp-content blockquote {
-  border-left: 3px solid var(--gold-500);
+  border-left: 3px solid #eab308;
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: var(--grey-500);
+  color: #71717a;
 }
 .wp-content table {
   width: 100%;
@@ -133,13 +169,13 @@ body {
 }
 .wp-content th,
 .wp-content td {
-  border: 1px solid var(--grey-200);
+  border: 1px solid #262626;
   padding: 0.6rem 0.8rem;
   text-align: left;
 }
 .wp-content th {
-  background: var(--grey-100);
-  color: var(--navy-900);
+  background: var(--coal);
+  color: #ffffff;
 }
 /* Neutralize theme layout scaffolding that came along in the extraction */
 .wp-content .row,

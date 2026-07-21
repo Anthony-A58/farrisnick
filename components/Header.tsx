@@ -8,13 +8,13 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy-900 text-white shadow-lg">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-night text-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <Link href="/" className="shrink-0">
-          <span className="font-display text-xl font-bold tracking-wide lg:text-2xl">
-            Farris <span className="text-gold-500">Law Firm</span>
+          <span className="font-display text-2xl tracking-wide text-white lg:text-[27px]">
+            Farris<span className="text-yellow-500">.</span>
           </span>
-          <span className="block text-[0.65rem] uppercase tracking-[0.2em] text-grey-200/80">
+          <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.24em] text-zinc-500">
             Criminal Defense
           </span>
         </Link>
@@ -24,13 +24,13 @@ export default function Header() {
             <div key={item.href} className="group relative">
               <Link
                 href={item.href}
-                className="rounded px-3 py-2 text-sm font-medium text-grey-200 transition hover:text-gold-400"
+                className="px-3 py-2 text-sm font-semibold uppercase tracking-[0.04em] text-zinc-200 transition hover:text-yellow-500"
               >
                 {item.label}
               </Link>
               {item.children && (
                 <div
-                  className={`invisible absolute left-0 top-full grid gap-x-2 rounded-b-md bg-navy-800 p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100 ${
+                  className={`invisible absolute left-0 top-full grid gap-x-2 border border-hairline bg-coal p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100 ${
                     item.children.length > 14
                       ? "w-[42rem] grid-cols-3"
                       : item.children.length > 7
@@ -42,7 +42,7 @@ export default function Header() {
                     <Link
                       key={c.href}
                       href={c.href}
-                      className="block rounded px-3 py-2 text-sm text-grey-200 hover:bg-navy-700 hover:text-gold-400"
+                      className="block px-3 py-2 text-sm text-zinc-400 hover:bg-hairline hover:text-yellow-500"
                     >
                       {c.label}
                     </Link>
@@ -55,23 +55,23 @@ export default function Header() {
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a href={SITE.phoneHref} className="text-right">
-            <span className="block text-xs text-grey-200/80">
+            <span className="block text-xs font-semibold uppercase tracking-wide text-zinc-500">
               Free Consultation 24/7
             </span>
-            <span className="block font-semibold text-gold-400">
+            <span className="block font-display text-lg leading-tight text-yellow-500">
               {SITE.phone}
             </span>
           </a>
           <Link
             href="/contact/"
-            className="rounded bg-gold-500 px-4 py-2.5 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
+            className="bg-yellow-500 px-4 py-2.5 text-sm font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
           >
             Free Case Review
           </Link>
         </div>
 
         <button
-          className="rounded p-2 text-grey-200 lg:hidden"
+          className="p-2 text-zinc-200 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
@@ -87,12 +87,12 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-navy-700 bg-navy-900 pb-4 lg:hidden">
+        <nav className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-hairline bg-night pb-24 lg:hidden">
           {NAV.map((item) => (
             <div key={item.href}>
               <Link
                 href={item.href}
-                className="block px-5 py-2.5 font-medium text-grey-200"
+                className="block px-5 py-2.5 font-bold uppercase tracking-wide text-zinc-200"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -101,7 +101,7 @@ export default function Header() {
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="block px-8 py-1.5 text-sm text-grey-200/80"
+                  className="block px-8 py-1.5 text-sm text-zinc-500"
                   onClick={() => setOpen(false)}
                 >
                   {c.label}

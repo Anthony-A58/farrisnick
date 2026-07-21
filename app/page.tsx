@@ -33,22 +33,18 @@ const faqJsonLd = {
   })),
 };
 
-function PhoneCta({ dark = false }: { dark?: boolean }) {
+function PhoneCta() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <a
         href={SITE.phoneHref}
-        className="rounded bg-gold-500 px-6 py-3.5 font-bold text-navy-950 transition hover:bg-gold-400"
+        className="bg-yellow-500 px-6 py-3.5 font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
       >
         Call {SITE.phone}
       </a>
       <Link
         href="/contact/"
-        className={
-          dark
-            ? "rounded border border-grey-200/40 px-6 py-3.5 font-semibold text-white transition hover:border-gold-400 hover:text-gold-400"
-            : "rounded border border-navy-900/30 px-6 py-3.5 font-semibold text-navy-900 transition hover:border-navy-900 hover:bg-navy-900 hover:text-white"
-        }
+        className="border-2 border-zinc-600 px-6 py-3 font-bold uppercase tracking-[0.03em] text-white transition hover:border-yellow-500 hover:text-yellow-500"
       >
         Free Case Review
       </Link>
@@ -65,33 +61,35 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-950 text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:px-6 lg:pb-0 lg:pt-16">
+      <section className="relative overflow-hidden bg-black text-white">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-0 lg:pt-20">
           <StaggerGroup>
             <StaggerItem>
-              <h1 className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-white lg:text-5xl xl:text-6xl">
-                Criminal Defense Across{" "}
-                <span className="text-gold-400">Orange County</span> and{" "}
-                <span className="text-gold-400">Los Angeles County</span>
+              <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
+                Orange County · Los Angeles Criminal Defense
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="cutout text-5xl sm:text-6xl lg:text-7xl xl:text-[92px]">
+                Criminal Defense Across Orange County and Los Angeles County
               </h1>
             </StaggerItem>
             <StaggerItem>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-grey-200/90">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
                 Talk to attorney Charles Farris tonight. Free phone
                 consultations 24/7/365, payment plans available.
               </p>
             </StaggerItem>
             <StaggerItem>
               <div className="mt-8 pb-2 lg:pb-16">
-                <PhoneCta dark />
+                <PhoneCta />
               </div>
             </StaggerItem>
           </StaggerGroup>
           <Reveal delay={0.15} y={0} className="relative hidden self-end lg:block">
-            {/* Soft glow so the cutout sits naturally on the navy */}
+            {/* Yellow glow so the cutout sits naturally on the black */}
             <div
-              className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(240,179,35,0.14),rgba(27,58,102,0.35)_45%,transparent_72%)]"
+              className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(234,179,8,0.16),rgba(20,20,20,0.5)_45%,transparent_72%)]"
               aria-hidden
             />
             <Image
@@ -100,7 +98,7 @@ export default function Home() {
               width={895}
               height={775}
               priority
-              className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+              className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
               sizes="(min-width: 1024px) 45vw, 1px"
             />
           </Reveal>
@@ -108,10 +106,34 @@ export default function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-grey-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-4 py-6 lg:justify-between lg:px-6">
-          <p className="text-sm font-semibold text-navy-900">
-            <span className="text-gold-500" aria-hidden>
+      <section className="bg-yellow-500">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
+          {[
+            { b: "24/7", s: "Free Phone Consultations" },
+            { b: "$0", s: "Consultation Fee" },
+            { b: "2", s: "Offices · OC + LA" },
+            { b: "5.0", s: "Rated on Google and Avvo" },
+          ].map((t) => (
+            <div
+              key={t.s}
+              className="border-b border-r border-black/10 px-8 py-7 last:border-r-0 lg:border-b-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
+            >
+              <b className="font-display block text-4xl leading-none text-night lg:text-5xl">
+                {t.b}
+              </b>
+              <small className="text-[13px] font-bold uppercase tracking-[0.06em] text-night/70">
+                {t.s}
+              </small>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Badges */}
+      <section className="border-b border-hairline bg-night">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-4 py-6 lg:justify-between lg:px-8">
+          <p className="text-sm font-semibold text-zinc-300">
+            <span className="text-yellow-500" aria-hidden>
               ★★★★★
             </span>{" "}
             Rated 5.0 by clients on Google and Avvo
@@ -124,7 +146,7 @@ export default function Home() {
                 alt={b.alt}
                 width={90}
                 height={44}
-                className="h-9 w-auto object-contain grayscale transition hover:grayscale-0"
+                className="h-9 w-auto object-contain brightness-0 invert opacity-50 transition hover:opacity-90"
               />
             ))}
           </div>
@@ -132,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Victories marquee */}
-      <section className="marquee overflow-hidden border-b border-grey-200 bg-grey-100 py-8">
+      <section className="marquee overflow-hidden border-b border-hairline bg-coal-deep py-8">
         <h2 className="sr-only">Recent Victories</h2>
         <div className="marquee-track flex w-max gap-4 pr-4">
           {[...VICTORIES, ...VICTORIES].map((v, i) => (
@@ -141,12 +163,12 @@ export default function Home() {
               key={`${v.case}-${i}`}
               aria-hidden={i >= VICTORIES.length}
               tabIndex={i >= VICTORIES.length ? -1 : undefined}
-              className="w-80 shrink-0 rounded border border-grey-200 bg-white p-5 transition hover:border-gold-500"
+              className="w-80 shrink-0 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal p-5 transition hover:border-yellow-500"
             >
-              <p className="font-display text-sm font-bold uppercase tracking-wide text-navy-900">
+              <p className="font-display text-sm tracking-wide text-yellow-500">
                 {v.case}
               </p>
-              <p className="mt-1.5 text-sm leading-snug text-grey-700">
+              <p className="mt-1.5 text-sm leading-snug text-zinc-300">
                 {v.outcome}
               </p>
             </Link>
@@ -155,7 +177,7 @@ export default function Home() {
         <p className="mt-5 text-center text-sm">
           <Link
             href="/recent-victories/"
-            className="font-semibold text-navy-900 underline decoration-gold-500 underline-offset-4 hover:text-navy-700"
+            className="font-semibold text-zinc-200 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
           >
             See all recent victories
           </Link>
@@ -163,12 +185,12 @@ export default function Home() {
       </section>
 
       {/* Intro: preserved SEO copy */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1fr_0.85fr] lg:gap-16 lg:px-6 lg:py-24">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[1fr_0.85fr] lg:gap-16 lg:px-8 lg:py-24">
         <Reveal>
-          <h2 className="font-display text-3xl font-bold leading-tight text-navy-900 lg:text-4xl">
+          <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
             Orange County and Los Angeles Criminal Defense Lawyers
           </h2>
-          <div className="mt-5 space-y-4 leading-relaxed text-grey-700">
+          <div className="mt-6 space-y-4 leading-relaxed text-zinc-400">
             <p>
               If you are facing criminal charges, you need an experienced
               criminal defense lawyer who knows the local courts, prosecutors,
@@ -194,21 +216,24 @@ export default function Home() {
         </Reveal>
         <Reveal delay={0.1}>
           <div className="relative">
-            <div className="absolute -left-3 -top-3 h-full w-full rounded border-2 border-gold-500" aria-hidden />
+            <div
+              className="absolute -left-3 -top-3 h-full w-full border-2 border-yellow-500"
+              aria-hidden
+            />
             <Image
               src="/wp-content/uploads/info-image-new.webp"
               alt="Criminal defense representation at every stage of the process"
               width={588}
               height={528}
-              className="relative w-full rounded object-cover"
+              className="relative w-full object-cover"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>
-          <div className="mt-6 rounded bg-navy-900 p-6 text-white">
-            <h3 className="font-display text-xl font-bold">
+          <div className="mt-6 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal p-6 text-white">
+            <h3 className="font-display text-xl">
               About Our Orange County and Los Angeles Criminal Defense Lawyers
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-grey-200/90">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400">
               Founded by Charles and his wife Beatrice in 2024, Farris Law Firm
               brings a refreshing approach to criminal law in Southern
               California. Having managed thousands of misdemeanor and felony
@@ -218,22 +243,22 @@ export default function Home() {
             </p>
             <Link
               href="/about-us/"
-              className="mt-4 inline-block text-sm font-semibold text-gold-400 hover:text-gold-500"
+              className="mt-4 inline-block text-sm font-bold uppercase tracking-[0.04em] text-yellow-500 hover:text-yellow-300"
             >
-              Meet Charles and Beatrice
+              Meet Charles and Beatrice →
             </Link>
           </div>
         </Reveal>
       </section>
 
       {/* Practice areas bento */}
-      <section className="bg-navy-950 py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <section className="border-y border-hairline bg-black py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold text-white lg:text-4xl">
+            <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
               Are You Facing Criminal Charges?
             </h2>
-            <p className="mt-3 max-w-2xl text-grey-200/80">
+            <p className="mt-4 max-w-2xl text-zinc-400">
               Farris Law Firm can help. We defend the full range of criminal
               matters in Orange County, Los Angeles County, and the San
               Fernando Valley.
@@ -249,25 +274,27 @@ export default function Home() {
               >
                 <Link
                   href={p.href}
-                  className="group flex h-full flex-col rounded border border-navy-700 bg-navy-900 p-6 transition hover:border-gold-500"
+                  className="group flex h-full flex-col border border-neutral-800 bg-coal p-6 transition hover:-translate-y-1 hover:border-yellow-500"
                 >
-                  {/* Icons ship with the old site's red baked in; invert to
-                      white so gold stays the page's only accent. */}
-                  <Image
-                    src={p.icon}
-                    alt=""
-                    width={44}
-                    height={44}
-                    className="h-11 w-11 object-contain brightness-0 invert opacity-80"
-                  />
-                  <h3 className="font-display mt-4 text-lg font-bold text-white group-hover:text-gold-400">
+                  <span className="flex h-13 w-13 items-center justify-center bg-yellow-500 p-2.5">
+                    {/* Icons ship with the old site's red baked in; force to
+                        solid black so they sit on the yellow tag. */}
+                    <Image
+                      src={p.icon}
+                      alt=""
+                      width={44}
+                      height={44}
+                      className="h-8 w-8 object-contain brightness-0"
+                    />
+                  </span>
+                  <h3 className="mt-4 text-lg font-extrabold text-white group-hover:text-yellow-500">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-grey-200/70">
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">
                     {p.blurb}
                   </p>
-                  <span className="mt-auto pt-4 text-sm font-semibold text-gold-400">
-                    Learn more
+                  <span className="mt-auto pt-4 text-sm font-bold uppercase tracking-[0.04em] text-yellow-500">
+                    Explore Defense →
                   </span>
                 </Link>
               </StaggerItem>
@@ -276,7 +303,7 @@ export default function Home() {
           <Reveal className="mt-8 text-center">
             <Link
               href="/practice-areas/"
-              className="font-semibold text-grey-200 underline decoration-gold-500 underline-offset-4 hover:text-gold-400"
+              className="font-semibold text-zinc-200 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
             >
               All practice areas
             </Link>
@@ -285,13 +312,13 @@ export default function Home() {
       </section>
 
       {/* Why choose: sticky heading + list */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:px-6 lg:py-24">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:py-24">
         <div className="lg:sticky lg:top-24 lg:self-start">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold leading-tight text-navy-900 lg:text-4xl">
-              Why Choose Our Criminal Defense Attorneys?
+            <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
+              The Difference That Wins Cases
             </h2>
-            <p className="mt-4 leading-relaxed text-grey-700">
+            <p className="mt-5 leading-relaxed text-zinc-400">
               Our mission is to guide and support you, not intimidate. We are
               skilled at negotiating favorable plea deals and equally prepared
               to take your case to trial.
@@ -301,14 +328,19 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-        <StaggerGroup className="space-y-6">
-          {WHY_CHOOSE.map((w) => (
+        <StaggerGroup className="space-y-4">
+          {WHY_CHOOSE.map((w, i) => (
             <StaggerItem key={w.title}>
-              <div className="rounded border border-grey-200 bg-white p-6 transition hover:border-gold-500">
-                <h3 className="font-display text-xl font-bold text-navy-900">
-                  {w.title}
-                </h3>
-                <p className="mt-2 leading-relaxed text-grey-700">{w.body}</p>
+              <div className="flex gap-6 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-6 transition hover:border-yellow-500">
+                <span className="font-display text-3xl text-yellow-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg font-extrabold text-white">
+                    {w.title}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-zinc-400">{w.body}</p>
+                </div>
               </div>
             </StaggerItem>
           ))}
@@ -316,8 +348,8 @@ export default function Home() {
       </section>
 
       {/* Consult band */}
-      <section className="bg-gold-500">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-3 lg:px-6">
+      <section className="bg-yellow-500">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 lg:grid-cols-3 lg:px-8">
           {[
             {
               n: "1",
@@ -337,14 +369,12 @@ export default function Home() {
           ].map((s) => (
             <Reveal key={s.n}>
               <div className="flex gap-4">
-                <span className="font-display text-5xl font-bold text-navy-950/25">
+                <span className="font-display text-6xl leading-none text-night/20">
                   {s.n}
                 </span>
                 <div>
-                  <h3 className="font-display text-xl font-bold text-navy-950">
-                    {s.t}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-navy-950/80">
+                  <h3 className="font-display text-xl text-night">{s.t}</h3>
+                  <p className="mt-1.5 text-sm font-medium leading-relaxed text-night/80">
                     {s.d}
                   </p>
                 </div>
@@ -355,28 +385,31 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-grey-100 py-16 lg:py-24">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <section className="bg-night py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold text-navy-900 lg:text-4xl">
-              What Our Clients Say
+            <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
+              The Verdict Is In
             </h2>
           </Reveal>
           <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <StaggerItem key={t.author} className={i === 1 ? "md:mt-8" : ""}>
-                <figure className="flex h-full flex-col rounded border border-grey-200 bg-white p-6">
-                  <span className="text-gold-500" aria-hidden>
+                <figure className="flex h-full flex-col border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-7">
+                  <span
+                    className="text-xl tracking-[2px] text-yellow-500"
+                    aria-hidden
+                  >
                     ★★★★★
                   </span>
-                  <blockquote className="mt-3 flex-1 leading-relaxed text-grey-700">
+                  <blockquote className="mt-4 flex-1 leading-relaxed text-zinc-200">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
-                  <figcaption className="mt-4 border-t border-grey-200 pt-3">
-                    <span className="font-semibold text-navy-900">
+                  <figcaption className="mt-5 border-t border-hairline pt-4">
+                    <span className="font-extrabold text-white">
                       {t.author}
                     </span>
-                    <span className="block text-sm text-grey-500">
+                    <span className="block text-[13px] font-semibold uppercase tracking-[0.04em] text-zinc-500">
                       {t.caseType}
                     </span>
                   </figcaption>
@@ -387,7 +420,7 @@ export default function Home() {
           <Reveal className="mt-8">
             <Link
               href="/about/reviews/"
-              className="font-semibold text-navy-900 underline decoration-gold-500 underline-offset-4 hover:text-navy-700"
+              className="font-semibold text-zinc-200 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
             >
               Read more client reviews
             </Link>
@@ -396,26 +429,27 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-4xl px-4 py-16 lg:px-6 lg:py-24">
+      <section className="mx-auto max-w-4xl px-4 py-16 lg:px-8 lg:py-24">
         <Reveal>
-          <h2 className="font-display text-3xl font-bold text-navy-900 lg:text-4xl">
-            Get Real Answers from an Orange County and Los Angeles Criminal Defense Lawyer
+          <h2 className="font-display text-3xl leading-[0.98] text-white lg:text-4xl">
+            Get Real Answers from an Orange County and Los Angeles Criminal
+            Defense Lawyer
           </h2>
         </Reveal>
         <div className="mt-8 space-y-3">
           {FAQS.map((f) => (
             <Reveal key={f.q}>
-              <details className="group rounded border border-grey-200 bg-white open:border-gold-500">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-semibold text-navy-900 [&::-webkit-details-marker]:hidden">
+              <details className="group border border-neutral-800 border-l-4 border-l-yellow-500 bg-coal">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-lg font-extrabold text-white [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <span
-                    className="text-gold-500 transition-transform group-open:rotate-45"
+                    className="font-display text-2xl text-yellow-500 transition-transform group-open:rotate-45"
                     aria-hidden
                   >
                     +
                   </span>
                 </summary>
-                <p className="px-5 pb-5 leading-relaxed text-grey-700">{f.a}</p>
+                <p className="px-5 pb-5 leading-relaxed text-zinc-400">{f.a}</p>
               </details>
             </Reveal>
           ))}
@@ -423,13 +457,13 @@ export default function Home() {
       </section>
 
       {/* Offices */}
-      <section className="border-t border-grey-200 bg-white py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <section className="border-t border-hairline bg-coal-deep py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-bold text-navy-900">
+            <h2 className="font-display text-4xl leading-[0.95] text-white">
               Two Offices, One Standard of Defense
             </h2>
-            <p className="mt-3 max-w-2xl text-grey-700">
+            <p className="mt-4 max-w-2xl text-zinc-400">
               Serving Orange County, Los Angeles County, and the San Fernando
               Valley from offices in Aliso Viejo and Burbank.
             </p>
@@ -437,30 +471,30 @@ export default function Home() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {SITE.offices.map((o, i) => (
               <Reveal key={o.label} delay={i * 0.1}>
-                <div className="overflow-hidden rounded border border-grey-200">
+                <div className="overflow-hidden border border-neutral-800 bg-coal">
                   <iframe
                     src={o.mapsEmbed}
                     title={`Map of the Farris Law Firm ${o.label} office`}
-                    className="h-56 w-full border-0"
+                    className="h-56 w-full border-0 grayscale"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     allowFullScreen
                   />
                   <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-navy-900">
+                    <h3 className="font-display text-xl text-white">
                       {o.label} Office
                     </h3>
                     <a
                       href={o.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 block text-grey-700 hover:text-navy-900"
+                      className="mt-2 block text-zinc-400 hover:text-white"
                     >
                       {o.street}
                       <br />
                       {o.city}, {o.state} {o.zip}
                     </a>
-                    <p className="mt-2 text-sm text-grey-500">
+                    <p className="mt-2 text-sm text-zinc-500">
                       {o.label === "Orange County"
                         ? "Minutes from Harbor Justice Center, within reach of all four OC criminal courthouses."
                         : "Serving Burbank, Glendale, Van Nuys, and the greater San Fernando Valley."}
@@ -468,7 +502,7 @@ export default function Home() {
                     <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                       <a
                         href={SITE.phoneHref}
-                        className="font-semibold text-navy-900 underline decoration-gold-500 underline-offset-4"
+                        className="font-semibold text-zinc-200 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
                       >
                         {SITE.phone}
                       </a>
@@ -476,7 +510,7 @@ export default function Home() {
                         href={o.mapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-navy-900 underline decoration-gold-500 underline-offset-4"
+                        className="font-semibold text-zinc-200 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-500"
                       >
                         View on Google Maps
                       </a>
@@ -490,42 +524,50 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-navy-950 py-16 text-white lg:py-20">
-        <div className="mx-auto max-w-6xl px-4 text-center lg:px-6">
+      <section className="border-t border-hairline bg-black py-16 text-white lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <Reveal>
-            <h2 className="font-display mx-auto max-w-3xl text-3xl font-bold leading-tight lg:text-4xl">
-              We got you. Talk to a defense attorney tonight.
+            <p className="cutout mx-auto text-6xl sm:text-7xl lg:text-8xl" aria-hidden>
+              We Got You
+            </p>
+            <h2 className="mx-auto mt-6 max-w-3xl text-xl font-extrabold text-white lg:text-2xl">
+              Talk to a defense attorney tonight.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-grey-200/80">
+            <p className="mx-auto mt-3 max-w-xl text-zinc-400">
               Free, confidential phone consultation any hour, any day. Payment
               plans available.
             </p>
             <div className="mt-8 flex justify-center">
-              <PhoneCta dark />
+              <a
+                href={SITE.phoneHref}
+                className="bg-yellow-500 px-10 py-5 font-display text-2xl text-night transition hover:bg-yellow-300"
+              >
+                {SITE.phone}
+              </a>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* State Bar verification */}
-      <section className="border-t border-navy-800 bg-navy-950 py-6">
+      <section className="border-t border-hairline bg-black py-6">
         <a
           href={CALBAR.profileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-4 px-4 text-center lg:px-6"
+          className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 px-4 text-center lg:px-8"
         >
           <Image
             src="/wp-content/uploads/california-bar.png"
             alt="State Bar of California"
             width={72}
             height={72}
-            className="h-14 w-auto object-contain brightness-0 invert opacity-80"
+            className="h-14 w-auto object-contain brightness-0 invert opacity-60"
           />
-          <span className="text-sm text-grey-200/70">
+          <span className="text-sm text-zinc-500">
             Charles P. Farris is licensed by the State Bar of California,
             License #{CALBAR.number}.{" "}
-            <span className="font-semibold text-gold-400 underline decoration-gold-500 underline-offset-4">
+            <span className="font-semibold text-yellow-500 underline decoration-yellow-500 underline-offset-4">
               Verify at calbar.ca.gov
             </span>
           </span>

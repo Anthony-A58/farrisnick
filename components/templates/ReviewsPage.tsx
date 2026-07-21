@@ -8,7 +8,7 @@ const GOOGLE_REVIEWS_URL = "https://maps.google.com/?cid=4157033397039245050";
 
 function Stars({ n }: { n: number }) {
   return (
-    <span className="text-gold-500" aria-label={`${n} out of 5 stars`}>
+    <span className="text-yellow-500" aria-label={`${n} out of 5 stars`}>
       {"★".repeat(n)}
     </span>
   );
@@ -47,48 +47,48 @@ export default function ReviewsPage() {
       />
 
       {/* Header with rating summary. H1 stays "Reviews" for SEO parity. */}
-      <div className="relative overflow-hidden bg-navy-950 py-12 text-white lg:py-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(27,58,102,0.55),transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 lg:px-6">
+      <div className="relative overflow-hidden border-b border-hairline bg-black py-12 text-white lg:py-16">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.08),transparent_60%)]" />
+        <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h1 className="font-display text-3xl font-bold leading-tight lg:text-5xl">
+              <h1 className="cutout max-w-4xl text-4xl lg:text-6xl">
                 Reviews
               </h1>
-              <p className="mt-4 max-w-xl text-grey-200/90">
+              <p className="mt-4 max-w-xl text-zinc-300">
                 Real words from real clients across Orange County, Los Angeles,
                 and the San Fernando Valley. We are honored by the trust they
                 have placed in us.
               </p>
               <Link
                 href="/about/testimonials/"
-                className="mt-4 inline-block text-sm font-semibold text-gold-400 underline decoration-gold-500 underline-offset-4 hover:text-gold-500"
+                className="mt-4 inline-block text-sm font-semibold text-yellow-500 underline decoration-yellow-500 underline-offset-4 hover:text-yellow-300"
               >
                 Read longer client testimonials
               </Link>
             </div>
-            <div className="shrink-0 rounded border border-navy-700 bg-navy-900/60 p-6 text-center">
-              <div className="font-display text-5xl font-bold text-gold-400">
+            <div className="shrink-0 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-6 text-center">
+              <div className="font-display text-5xl text-yellow-500">
                 5.0
               </div>
-              <div className="mt-1 text-xl tracking-widest text-gold-500" aria-hidden>
+              <div className="mt-1 text-xl tracking-[2px] text-yellow-500" aria-hidden>
                 {"★★★★★"}
               </div>
-              <p className="mt-2 text-sm text-grey-200/80">
+              <p className="mt-2 text-sm text-zinc-400">
                 {REVIEW_COUNT} five-star reviews
               </p>
               <a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block rounded bg-gold-500 px-4 py-2 text-sm font-bold text-navy-950 transition hover:bg-gold-400"
+                className="mt-4 inline-block bg-yellow-500 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.03em] text-night transition hover:bg-yellow-300"
               >
                 Read them on Google
               </a>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-navy-800 pt-6">
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-hairline pt-6">
             {[
               { src: "/wp-content/uploads/california-bar.png", alt: "State Bar of California" },
               { src: "/wp-content/uploads/google-screened.png", alt: "Google Screened" },
@@ -101,7 +101,7 @@ export default function ReviewsPage() {
                 alt={b.alt}
                 width={90}
                 height={44}
-                className="h-9 w-auto object-contain opacity-80 brightness-0 invert"
+                className="h-9 w-auto object-contain brightness-0 invert opacity-50 transition hover:opacity-90"
               />
             ))}
           </div>
@@ -109,31 +109,31 @@ export default function ReviewsPage() {
       </div>
 
       {/* Masonry grid of review cards */}
-      <section className="mx-auto max-w-6xl px-4 py-12 lg:px-6 lg:py-16">
+      <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
         <div className="[column-gap:1.5rem] sm:columns-2 lg:columns-3">
           {REVIEWS.map((r) => (
             <figure
               key={r.author + r.when}
-              className="mb-6 break-inside-avoid rounded border border-grey-200 bg-white p-6"
+              className="mb-6 break-inside-avoid border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-6"
             >
               <div className="flex items-center justify-between">
                 <Stars n={r.stars} />
-                <span className="text-xs text-grey-500">{r.when}</span>
+                <span className="text-xs text-zinc-500">{r.when}</span>
               </div>
-              <blockquote className="mt-3 leading-relaxed text-grey-700">
+              <blockquote className="mt-3 leading-relaxed text-zinc-200">
                 {r.text}
               </blockquote>
-              <figcaption className="mt-4 flex items-center gap-3 border-t border-grey-200 pt-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-gold-400">
+              <figcaption className="mt-4 flex items-center gap-3 border-t border-hairline pt-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-neutral-800 bg-coal text-sm font-bold text-yellow-500">
                   {r.author.trim().charAt(0).toUpperCase()}
                 </span>
-                <span className="font-semibold text-navy-900">{r.author}</span>
+                <span className="font-extrabold text-white">{r.author}</span>
               </figcaption>
             </figure>
           ))}
         </div>
 
-        <p className="mt-6 text-xs text-grey-500">
+        <p className="mt-6 text-xs text-zinc-500">
           Reviews are the words of individual clients. Prior results do not
           guarantee a similar outcome. Attorney advertising.
         </p>
