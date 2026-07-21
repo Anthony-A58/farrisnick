@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 import { getPage } from "@/lib/content";
 import {
@@ -62,6 +63,11 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-black text-white">
+        <BackgroundVideo />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.85))]"
+          aria-hidden
+        />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-0 lg:pt-20">
           <StaggerGroup>
             <StaggerItem>
@@ -524,8 +530,13 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-hairline bg-black py-16 text-white lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
+      <section className="relative overflow-hidden border-t border-hairline bg-black py-16 text-white lg:py-24">
+        <BackgroundVideo />
+        <div
+          className="absolute inset-0 bg-[rgba(0,0,0,.72)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-7xl px-4 text-center lg:px-8">
           <Reveal>
             <p className="cutout mx-auto text-6xl sm:text-7xl lg:text-8xl" aria-hidden>
               We Got You
