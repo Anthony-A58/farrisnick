@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --navy-950: #081729;
+  --navy-900: #0b1f3a;
+  --navy-800: #122b4e;
+  --navy-700: #1b3a66;
+  --gold-500: #f0b323;
+  --gold-400: #f7c548;
+  --grey-100: #f4f6f8;
+  --grey-200: #e6eaef;
+  --grey-500: #6b7686;
+  --grey-700: #3d4654;
+  --ink: #16202e;
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-grey-100: var(--grey-100);
+  --color-grey-200: var(--grey-200);
+  --color-grey-500: var(--grey-500);
+  --color-grey-700: var(--grey-700);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Victories marquee: the page's single marquee. Transform-only animation,
+   pauses on hover, collapses to a scrollable row under reduced motion. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+}
+
+/* Migrated WordPress content. Kept verbatim for SEO parity; these rules make
+   it read cleanly inside the new shell. */
+.wp-content {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--grey-700);
+}
+.wp-content h2,
+.wp-content h3,
+.wp-content h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  color: var(--navy-900);
+  line-height: 1.25;
+  margin: 2rem 0 0.875rem;
+}
+.wp-content h2 {
+  font-size: 1.75rem;
+}
+.wp-content h3 {
+  font-size: 1.375rem;
+}
+.wp-content h4 {
+  font-size: 1.125rem;
+}
+.wp-content p {
+  margin: 0 0 1.125rem;
+}
+.wp-content ul,
+.wp-content ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+.wp-content ul {
+  list-style: disc;
+}
+.wp-content ol {
+  list-style: decimal;
+}
+.wp-content li {
+  margin-bottom: 0.4rem;
+}
+.wp-content a {
+  color: var(--navy-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold-500);
+}
+.wp-content a:hover {
+  color: var(--navy-900);
+}
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.25rem 0;
+}
+.wp-content blockquote {
+  border-left: 3px solid var(--gold-500);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--grey-500);
+}
+.wp-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.wp-content th,
+.wp-content td {
+  border: 1px solid var(--grey-200);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+.wp-content th {
+  background: var(--grey-100);
+  color: var(--navy-900);
+}
+/* Neutralize theme layout scaffolding that came along in the extraction */
+.wp-content .row,
+.wp-content .content.column,
+.wp-content section {
+  display: block;
+  width: 100%;
+}
+.wp-content .sidebar {
+  display: none;
+}
