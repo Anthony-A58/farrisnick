@@ -6,6 +6,7 @@ import ReviewsPage from "@/components/templates/ReviewsPage";
 import TestimonialsPage from "@/components/templates/TestimonialsPage";
 import VictoriesGrid from "@/components/templates/VictoriesPage";
 import { CtaBand } from "@/components/templates/shared";
+import ContactPage from "@/components/templates/ContactPage";
 import LocationPage from "@/components/templates/LocationPage";
 import PracticePage from "@/components/templates/PracticePage";
 import QaPostPage from "@/components/templates/QaPostPage";
@@ -95,6 +96,8 @@ export default async function Page({ params }: Props) {
   const qa =
     slug.length === 2 && slug[0] === "blog" ? QA_BY_SLUG.get(slug[1]) : undefined;
   if (qa) return <QaPostPage post={qa} />;
+
+  if (joined === "contact") return <ContactPage />;
 
   if (joined === "blog") return <BlogIndex />;
 
