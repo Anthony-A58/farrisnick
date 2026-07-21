@@ -103,6 +103,37 @@ export default function Home() {
               className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
               sizes="(min-width: 1024px) 45vw, 1px"
             />
+            {/* Credential ribbon: circular medallions over the bottom of the
+                portrait, sized a touch larger than his hands. */}
+            <div className="absolute inset-x-0 bottom-[6%] z-20 flex justify-center gap-3">
+              {[
+                {
+                  src: "/wp-content/uploads/california-bar.png",
+                  alt: "State Bar of California",
+                },
+                {
+                  src: "/wp-content/uploads/provisors.png",
+                  alt: "ProVisors",
+                },
+                {
+                  src: "/wp-content/uploads/san-fernand-valley-bar.png",
+                  alt: "San Fernando Valley Bar Association",
+                },
+              ].map((c) => (
+                <span
+                  key={c.src}
+                  className="flex h-[104px] w-[104px] items-center justify-center rounded-full border border-black/10 bg-white p-3 shadow-[0_10px_28px_rgba(0,0,0,0.55)]"
+                >
+                  <Image
+                    src={c.src}
+                    alt={c.alt}
+                    width={120}
+                    height={120}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>
