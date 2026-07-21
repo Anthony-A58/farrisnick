@@ -1,0 +1,332 @@
+[
+ {
+  "path": "/",
+  "file": "home.json",
+  "title": "Orange County Criminal Defense Lawyer | Farris Law Firm",
+  "chars": 40585
+ },
+ {
+  "path": "/about-us/",
+  "file": "about-us.json",
+  "title": "About Us - Farris Law Firm",
+  "chars": 2513
+ },
+ {
+  "path": "/about/testimonials/",
+  "file": "about__testimonials.json",
+  "title": "Testimonials | Farris Law Firm",
+  "chars": 4778
+ },
+ {
+  "path": "/about/reviews/",
+  "file": "about__reviews.json",
+  "title": "Reviews - Farris Law Firm",
+  "chars": 43277
+ },
+ {
+  "path": "/practice-areas/",
+  "file": "practice-areas.json",
+  "title": "Practice Areas | Farris Law Firm",
+  "chars": 2439
+ },
+ {
+  "path": "/recent-victories/",
+  "file": "recent-victories.json",
+  "title": "Recent Victories - Farris Law Firm",
+  "chars": 2392
+ },
+ {
+  "path": "/contact/",
+  "file": "contact.json",
+  "title": "Contact - Farris Law Firm",
+  "chars": 3116
+ },
+ {
+  "path": "/blog/",
+  "file": "blog.json",
+  "title": "Blog - Farris Law Firm",
+  "chars": 15237
+ },
+ {
+  "path": "/privacy-policy/",
+  "file": "privacy-policy.json",
+  "title": "PRIVACY POLICY - Farris Law Firm",
+  "chars": 37552
+ },
+ {
+  "path": "/dui/",
+  "file": "dui.json",
+  "title": "Driving Under the Influence (DUI) - Farris Law Firm",
+  "chars": 3460
+ },
+ {
+  "path": "/assault/",
+  "file": "assault.json",
+  "title": "Assault and Battery - Farris Law Firm",
+  "chars": 3388
+ },
+ {
+  "path": "/domestic-violence/",
+  "file": "domestic-violence.json",
+  "title": "Domestic Violence Offenses - Farris Law Firm",
+  "chars": 3951
+ },
+ {
+  "path": "/drugs/",
+  "file": "drugs.json",
+  "title": "Drug Offenses - Farris Law Firm",
+  "chars": 2413
+ },
+ {
+  "path": "/guns/",
+  "file": "guns.json",
+  "title": "Weapons Charges - Farris Law Firm",
+  "chars": 2916
+ },
+ {
+  "path": "/theft/",
+  "file": "theft.json",
+  "title": "Theft Offenses - Farris Law Firm",
+  "chars": 3504
+ },
+ {
+  "path": "/traffic-offenses/",
+  "file": "traffic-offenses.json",
+  "title": "Traffic Offenses - Farris Law Firm",
+  "chars": 2060
+ },
+ {
+  "path": "/vandalism/",
+  "file": "vandalism.json",
+  "title": "Vandalism - Farris Law Firm",
+  "chars": 5102
+ },
+ {
+  "path": "/bench-warrants-failure-to-appear/",
+  "file": "bench-warrants-failure-to-appear.json",
+  "title": "Bench Warrants / Failure to Appear - Farris Law Firm",
+  "chars": 2920
+ },
+ {
+  "path": "/military-diversion/",
+  "file": "military-diversion.json",
+  "title": "Military and Judicial Diversion - Farris Law Firm",
+  "chars": 2165
+ },
+ {
+  "path": "/burbank-criminal-defense-lawyer/",
+  "file": "burbank-criminal-defense-lawyer.json",
+  "title": "Burbank Criminal Defense Attorneys - Farris Law Firm",
+  "chars": 11579
+ },
+ {
+  "path": "/burbank-felony-defense-lawyer/",
+  "file": "burbank-felony-defense-lawyer.json",
+  "title": "Burbank Felony Defense Lawyer - Farris Law Firm",
+  "chars": 10207
+ },
+ {
+  "path": "/burbank-expungement-lawyer/",
+  "file": "burbank-expungement-lawyer.json",
+  "title": "Burbank Expungement Lawyer - Farris Law Firm",
+  "chars": 10381
+ },
+ {
+  "path": "/burbank-misdemeanors-lawyer/",
+  "file": "burbank-misdemeanors-lawyer.json",
+  "title": "Burbank Misdemeanors Lawyer - Farris Law Firm",
+  "chars": 10324
+ },
+ {
+  "path": "/dui-defense-lawyers-in-burbank/",
+  "file": "dui-defense-lawyers-in-burbank.json",
+  "title": "DUI Defense Lawyers in Burbank - Farris Law Firm",
+  "chars": 9409
+ },
+ {
+  "path": "/burbank-property-crimes-lawyer/",
+  "file": "burbank-property-crimes-lawyer.json",
+  "title": "Burbank Property Crimes Lawyer - Farris Law Firm",
+  "chars": 11390
+ },
+ {
+  "path": "/burbank-theft-crimes-lawyer/",
+  "file": "burbank-theft-crimes-lawyer.json",
+  "title": "Burbank Theft Crimes Lawyer - Farris Law Firm",
+  "chars": 10577
+ },
+ {
+  "path": "/santa-clarita-criminal-defense-lawyer/",
+  "file": "santa-clarita-criminal-defense-lawyer.json",
+  "title": "Santa Clarita Criminal Defense Lawyer - Farris Law Firm",
+  "chars": 11846
+ },
+ {
+  "path": "/san-fernando-criminal-defense-lawyer/",
+  "file": "san-fernando-criminal-defense-lawyer.json",
+  "title": "Criminal Defense Attorney in San Fernando - Farris Law Firm",
+  "chars": 10133
+ },
+ {
+  "path": "/van-nuys-criminal-defense-lawyer/",
+  "file": "van-nuys-criminal-defense-lawyer.json",
+  "title": "Van Nuys Criminal Defense Lawyer - Farris Law Firm",
+  "chars": 14316
+ },
+ {
+  "path": "/glendale-criminal-defense-attorney/",
+  "file": "glendale-criminal-defense-attorney.json",
+  "title": "Glendale Criminal Defense Attorney - Farris Law Firm",
+  "chars": 11606
+ },
+ {
+  "path": "/lancaster-criminal-defense-attorney/",
+  "file": "lancaster-criminal-defense-attorney.json",
+  "title": "Lancaster Criminal Defense Attorney - Farris Law Firm",
+  "chars": 12059
+ },
+ {
+  "path": "/pasadena-criminal-defense-attorney/",
+  "file": "pasadena-criminal-defense-attorney.json",
+  "title": "Pasadena Criminal Defense Attorney - Farris Law Firm",
+  "chars": 12765
+ },
+ {
+  "path": "/alhambra-criminal-defense-attorney/",
+  "file": "alhambra-criminal-defense-attorney.json",
+  "title": "Alhambra Criminal Defense Attorney - Farris Law Firm",
+  "chars": 12898
+ },
+ {
+  "path": "/el-monte-criminal-defense-lawyer/",
+  "file": "el-monte-criminal-defense-lawyer.json",
+  "title": "El Monte Criminal Defense Lawyer - Farris Law Firm",
+  "chars": 13579
+ },
+ {
+  "path": "/ventura-criminal-defense-lawyer/",
+  "file": "ventura-criminal-defense-lawyer.json",
+  "title": "Criminal Defense Lawyer in Ventura - Farris Law Firm",
+  "chars": 13961
+ },
+ {
+  "path": "/west-covina-criminal-defense-lawyer/",
+  "file": "west-covina-criminal-defense-lawyer.json",
+  "title": "West Covina Criminal Defense Attorney - Farris Law Firm",
+  "chars": 11949
+ },
+ {
+  "path": "/blog/how-to-beat-a-vandalism-charge/",
+  "file": "blog__how-to-beat-a-vandalism-charge.json",
+  "title": "How to Beat a Vandalism Charge - Farris Law Firm",
+  "chars": 12843
+ },
+ {
+  "path": "/blog/facing-vandalism-charges-what-can-you-do/",
+  "file": "blog__facing-vandalism-charges-what-can-you-do.json",
+  "title": "Facing Vandalism Charges: What Can You Do? - Farris Law Firm",
+  "chars": 13780
+ },
+ {
+  "path": "/blog/when-are-juveniles-charged-as-adults-in-california/",
+  "file": "blog__when-are-juveniles-charged-as-adults-in-california.json",
+  "title": "When Are Juveniles Charged as Adults in California? - Farris Law Firm",
+  "chars": 10599
+ },
+ {
+  "path": "/blog/know-your-miranda-rights-at-a-dui-stop/",
+  "file": "blog__know-your-miranda-rights-at-a-dui-stop.json",
+  "title": "Know Your Miranda Rights at a DUI Stop - Farris Law Firm",
+  "chars": 9819
+ },
+ {
+  "path": "/blog/why-do-i-need-a-lawyer-for-shoplifting/",
+  "file": "blog__why-do-i-need-a-lawyer-for-shoplifting.json",
+  "title": "Why Do I Need a Lawyer for Shoplifting? - Farris Law Firm",
+  "chars": 12115
+ },
+ {
+  "path": "/blog/how-to-choose-a-criminal-defense-lawyer/",
+  "file": "blog__how-to-choose-a-criminal-defense-lawyer.json",
+  "title": "How to Choose a Criminal Defense Lawyer - Farris Law Firm",
+  "chars": 13548
+ },
+ {
+  "path": "/blog/how-long-does-an-expungement-take/",
+  "file": "blog__how-long-does-an-expungement-take.json",
+  "title": "How Long Does an Expungement Take - Farris Law Firm",
+  "chars": 13867
+ },
+ {
+  "path": "/blog/who-is-the-best-criminal-defense-lawyer-for-me/",
+  "file": "blog__who-is-the-best-criminal-defense-lawyer-for-me.json",
+  "title": "Who is the Best Criminal Defense Lawyer for Me - Farris Law Firm",
+  "chars": 13173
+ },
+ {
+  "path": "/blog/robbery-vs-burglary-legal-distinctions-and-defense-approaches/",
+  "file": "blog__robbery-vs-burglary-legal-distinctions-and-defense-approaches.json",
+  "title": "Robbery vs. Burglary: Legal Distinctions and Defense Approaches - Farris Law Firm",
+  "chars": 16803
+ },
+ {
+  "path": "/blog/what-happens-after-a-2nd-dui/",
+  "file": "blog__what-happens-after-a-2nd-dui.json",
+  "title": "What Happens After a 2nd DUI - Farris Law Firm",
+  "chars": 19664
+ },
+ {
+  "path": "/blog/what-to-do-right-after-a-theft-arrest/",
+  "file": "blog__what-to-do-right-after-a-theft-arrest.json",
+  "title": "What to Do Right After a Theft Arrest - Farris Law Firm",
+  "chars": 13284
+ },
+ {
+  "path": "/blog/common-defenses-for-theft-charges/",
+  "file": "blog__common-defenses-for-theft-charges.json",
+  "title": "Common Defenses for Theft Charges - Farris Law Firm",
+  "chars": 10500
+ },
+ {
+  "path": "/blog/defenses-for-vandalism-charges/",
+  "file": "blog__defenses-for-vandalism-charges.json",
+  "title": "Defenses for Vandalism Charges - Farris Law Firm",
+  "chars": 11465
+ },
+ {
+  "path": "/blog/understanding-degrees-of-robbery-charges-and-their-potential-sentences/",
+  "file": "blog__understanding-degrees-of-robbery-charges-and-their-potential-sentences.json",
+  "title": "Understanding the Degrees of Robbery Charges and Their Potential Sentences - Farris Law Firm",
+  "chars": 12885
+ },
+ {
+  "path": "/blog/what-kind-of-lawyer-is-needed-for-car-theft-charges/",
+  "file": "blog__what-kind-of-lawyer-is-needed-for-car-theft-charges.json",
+  "title": "What Kind of Lawyer Is Needed For Car Theft Charges? - Farris Law Firm",
+  "chars": 11431
+ },
+ {
+  "path": "/blog/sealing-and-expunging-juvenile-records/",
+  "file": "blog__sealing-and-expunging-juvenile-records.json",
+  "title": "Sealing and Expunging Juvenile Records - Farris Law Firm",
+  "chars": 13325
+ },
+ {
+  "path": "/blog/underage-dui/",
+  "file": "blog__underage-dui.json",
+  "title": "Underage DUI - Farris Law Firm",
+  "chars": 14457
+ },
+ {
+  "path": "/blog/violating-las-curfew-what-you-need-to-know-about-the-new-misdemeanor/",
+  "file": "blog__violating-las-curfew-what-you-need-to-know-about-the-new-misdemeanor.json",
+  "title": "Violating LA\u2019s Curfew: What You Need to Know About the New Misdemeanor - Farris Law Firm",
+  "chars": 13774
+ },
+ {
+  "path": "/blog/how-much-does-a-dui-lawyer-cost/",
+  "file": "blog__how-much-does-a-dui-lawyer-cost.json",
+  "title": "How Much Does a DUI Lawyer Cost - Farris Law Firm",
+  "chars": 12879
+ }
+]
