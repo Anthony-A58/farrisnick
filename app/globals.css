@@ -39,12 +39,16 @@ body {
     background-position: 600px 300px;
   }
 }
-.cutout {
+.cutout,
+.cutout-mask {
   font-family: var(--font-anton), sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   line-height: 0.88;
   letter-spacing: -0.01em;
+  margin: 0;
+}
+.cutout {
   background: repeating-linear-gradient(
     115deg,
     #e4e4e7,
@@ -63,6 +67,36 @@ body {
   .cutout {
     animation: none;
   }
+}
+
+/* Video-as-text-fill. The wrapper isolates the blend so it composites only
+   against its own children (the b-roll and the striped fallback), never the
+   rest of the hero. The mask's black block hides the footage everywhere
+   except the white glyphs, which multiply down and reveal the video. */
+.video-text {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.video-text__fill {
+  position: absolute;
+  inset: 0;
+}
+.video-text__fill video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.cutout-mask {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: #000;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  mix-blend-mode: multiply;
 }
 
 /* Victories marquee: the page's single marquee. Transform-only animation,
