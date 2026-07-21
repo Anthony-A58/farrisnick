@@ -62,48 +62,58 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-black text-white">
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-0 lg:pt-20">
+      <section className="relative overflow-hidden bg-black text-white lg:min-h-[760px]">
+        {/* Attorney anchored to the bottom-right. The oversized headline
+            crosses over the dark sky above him and his slanted shoulder, where
+            the near-black image lets the knockout's black gaps disappear. */}
+        <Reveal
+          delay={0.15}
+          y={0}
+          className="pointer-events-none absolute bottom-0 right-0 z-0 hidden w-[48%] max-w-[900px] lg:block"
+        >
+          {/* Yellow glow so the cutout sits naturally on the black */}
+          <div
+            className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(234,179,8,0.16),rgba(20,20,20,0.5)_45%,transparent_72%)]"
+            aria-hidden
+          />
+          <Image
+            src="/images/charles-hero-cutout.webp"
+            alt="Attorney Charles P. Farris of Farris Law Firm"
+            width={895}
+            height={775}
+            priority
+            className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
+            sizes="(min-width: 1024px) 48vw, 1px"
+          />
+        </Reveal>
+
+        <div className="relative z-10 pb-14 pt-12 lg:pb-24 lg:pt-20">
           <StaggerGroup>
             <StaggerItem>
-              <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
+              <p className="mb-4 pl-4 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500 lg:pl-8">
                 Orange County · Los Angeles Criminal Defense
               </p>
             </StaggerItem>
             <StaggerItem>
+              {/* Bleeds to the true left edge (no padding) and scales with the
+                  viewport so the letters read the video clearly. */}
               <VideoText
-                className="text-5xl sm:text-6xl lg:text-7xl xl:text-[92px]"
+                className="max-w-[min(1200px,94vw)] text-[clamp(3rem,11.5vw,9.5rem)]"
                 text="Criminal Defense Across Orange County and Los Angeles County"
               />
             </StaggerItem>
             <StaggerItem>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
+              <p className="mt-6 max-w-xl pl-4 text-lg leading-relaxed text-zinc-300 lg:pl-8">
                 Talk to attorney Charles Farris tonight. Free phone
                 consultations 24/7/365, payment plans available.
               </p>
             </StaggerItem>
             <StaggerItem>
-              <div className="mt-8 pb-2 lg:pb-16">
+              <div className="mt-8 pb-2 pl-4 lg:pl-8">
                 <PhoneCta />
               </div>
             </StaggerItem>
           </StaggerGroup>
-          <Reveal delay={0.15} y={0} className="relative hidden self-end lg:block">
-            {/* Yellow glow so the cutout sits naturally on the black */}
-            <div
-              className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(234,179,8,0.16),rgba(20,20,20,0.5)_45%,transparent_72%)]"
-              aria-hidden
-            />
-            <Image
-              src="/images/charles-hero-cutout.webp"
-              alt="Attorney Charles P. Farris of Farris Law Firm"
-              width={895}
-              height={775}
-              priority
-              className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
-              sizes="(min-width: 1024px) 45vw, 1px"
-            />
-          </Reveal>
         </div>
       </section>
 
