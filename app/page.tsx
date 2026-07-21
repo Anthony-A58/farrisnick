@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import VideoText from "@/components/VideoText";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 import { getPage } from "@/lib/content";
 import {
@@ -62,58 +62,52 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-black text-white lg:min-h-[760px]">
-        {/* Attorney anchored to the bottom-right. The oversized headline
-            crosses over the dark sky above him and his slanted shoulder, where
-            the near-black image lets the knockout's black gaps disappear. */}
-        <Reveal
-          delay={0.15}
-          y={0}
-          className="pointer-events-none absolute bottom-0 right-0 z-0 hidden w-[48%] max-w-[900px] lg:block"
-        >
-          {/* Yellow glow so the cutout sits naturally on the black */}
-          <div
-            className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(234,179,8,0.16),rgba(20,20,20,0.5)_45%,transparent_72%)]"
-            aria-hidden
-          />
-          <Image
-            src="/images/charles-hero-cutout.webp"
-            alt="Attorney Charles P. Farris of Farris Law Firm"
-            width={895}
-            height={775}
-            priority
-            className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
-            sizes="(min-width: 1024px) 48vw, 1px"
-          />
-        </Reveal>
-
-        <div className="relative z-10 pb-14 pt-12 lg:pb-24 lg:pt-20">
+      <section className="relative overflow-hidden bg-black text-white">
+        <BackgroundVideo />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.85))]"
+          aria-hidden
+        />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-0 lg:pt-20">
           <StaggerGroup>
             <StaggerItem>
-              <p className="mb-4 pl-4 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500 lg:pl-8">
+              <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.28em] text-yellow-500">
                 Orange County · Los Angeles Criminal Defense
               </p>
             </StaggerItem>
             <StaggerItem>
-              {/* Bleeds to the true left edge (no padding) and scales with the
-                  viewport so the letters read the video clearly. */}
-              <VideoText
-                className="max-w-[min(1200px,94vw)] text-[clamp(3rem,11.5vw,9.5rem)]"
-                text="Criminal Defense Across Orange County and Los Angeles County"
-              />
+              <h1 className="cutout text-5xl sm:text-6xl lg:text-7xl xl:text-[92px]">
+                Criminal Defense Across Orange County and Los Angeles County
+              </h1>
             </StaggerItem>
             <StaggerItem>
-              <p className="mt-6 max-w-xl pl-4 text-lg leading-relaxed text-zinc-300 lg:pl-8">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
                 Talk to attorney Charles Farris tonight. Free phone
                 consultations 24/7/365, payment plans available.
               </p>
             </StaggerItem>
             <StaggerItem>
-              <div className="mt-8 pb-2 pl-4 lg:pl-8">
+              <div className="mt-8 pb-2 lg:pb-16">
                 <PhoneCta />
               </div>
             </StaggerItem>
           </StaggerGroup>
+          <Reveal delay={0.15} y={0} className="relative hidden self-end lg:block">
+            {/* Yellow glow so the cutout sits naturally on the black */}
+            <div
+              className="pointer-events-none absolute inset-0 scale-110 bg-[radial-gradient(ellipse_at_center_bottom,rgba(234,179,8,0.16),rgba(20,20,20,0.5)_45%,transparent_72%)]"
+              aria-hidden
+            />
+            <Image
+              src="/images/charles-hero-cutout.webp"
+              alt="Attorney Charles P. Farris of Farris Law Firm"
+              width={895}
+              height={775}
+              priority
+              className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
+              sizes="(min-width: 1024px) 45vw, 1px"
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -537,14 +531,16 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="relative overflow-hidden border-t border-hairline bg-black py-16 text-white lg:py-24">
+        <BackgroundVideo />
+        <div
+          className="absolute inset-0 bg-[rgba(0,0,0,.72)]"
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-7xl px-4 text-center lg:px-8">
           <Reveal>
-            <VideoText
-              as="p"
-              className="text-6xl sm:text-7xl lg:text-8xl"
-              text="We Got You"
-              aria-hidden
-            />
+            <p className="cutout mx-auto text-6xl sm:text-7xl lg:text-8xl" aria-hidden>
+              We Got You
+            </p>
             <h2 className="mx-auto mt-6 max-w-3xl text-xl font-extrabold text-white lg:text-2xl">
               Talk to a defense attorney tonight.
             </h2>
