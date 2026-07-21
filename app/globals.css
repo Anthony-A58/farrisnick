@@ -84,13 +84,18 @@ body {
 }
 .video-text__fill video {
   position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
+  /* Sit 1px inside the mask so its black fully overlaps the footage edges;
+     without this a bright sub-pixel seam of video leaks along the box border. */
+  inset: 1px;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
   object-fit: cover;
-  /* The night b-roll is dark; lift it so the footage stays legible once it is
-     clipped down to the headline glyphs. */
-  filter: brightness(1.45) contrast(1.15) saturate(1.1);
+  /* Bias the crop toward the clip's bright horizon band so the lower headline
+     lines get lit city, not the dark foreground. */
+  object-position: center 32%;
+  /* The night b-roll is dark; lift it hard (and keep contrast modest so the
+     shadows don't crush) so the footage stays legible once clipped to glyphs. */
+  filter: brightness(1.95) contrast(1.05) saturate(1.2);
 }
 .cutout-mask {
   position: absolute;
