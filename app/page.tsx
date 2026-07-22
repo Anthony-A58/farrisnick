@@ -266,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Practice areas bento */}
+      {/* Practice areas: uniform media cards */}
       <section className="border-y border-hairline bg-black py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal>
@@ -279,37 +279,48 @@ export default function Home() {
               Fernando Valley.
             </p>
           </Reveal>
-          <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Uniform, equal-size cards; each has a media slot for a video or
+              image, matching the original design. */}
+          <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {PRACTICE_AREAS.map((p) => (
-              <StaggerItem
-                key={p.href + p.title}
-                className={
-                  p.large ? "sm:col-span-2" : p.wide ? "lg:col-span-2" : ""
-                }
-              >
+              <StaggerItem key={p.href + p.title}>
                 <Link
                   href={p.href}
-                  className="group flex h-full flex-col border border-neutral-800 bg-coal p-6 transition hover:-translate-y-1 hover:border-yellow-500"
+                  className="group relative flex min-h-[340px] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"
                 >
-                  <span className="flex h-13 w-13 items-center justify-center bg-yellow-500 p-2.5">
-                    {/* Icons ship with the old site's red baked in; force to
-                        solid black so they sit on the yellow tag. */}
-                    <Image
-                      src={p.icon}
-                      alt=""
-                      width={44}
-                      height={44}
-                      className="h-8 w-8 object-contain brightness-0"
-                    />
-                  </span>
-                  <h3 className="mt-4 text-lg font-extrabold text-white group-hover:text-yellow-500">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                    {p.blurb}
-                  </p>
-                  <span className="mt-auto pt-4 text-sm font-bold uppercase tracking-[0.04em] text-yellow-500">
-                    Explore Defense →
+                  {/* Media slot: a video or image drops in here later */}
+                  <span
+                    className="absolute inset-0 bg-[repeating-linear-gradient(135deg,#1c1c1c,#1c1c1c_14px,#232323_14px,#232323_28px)]"
+                    aria-hidden
+                  />
+                  {/* Bottom fade so the label reads over the media */}
+                  <span
+                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0)_35%,rgba(10,10,10,0.92))]"
+                    aria-hidden
+                  />
+                  <span className="relative z-[1]">
+                    <span className="flex items-center gap-3">
+                      <span className="flex h-13 w-13 shrink-0 items-center justify-center bg-yellow-500 p-2.5">
+                        {/* Icons ship with the old site's red baked in; force to
+                            solid black so they sit on the yellow tag. */}
+                        <Image
+                          src={p.icon}
+                          alt=""
+                          width={44}
+                          height={44}
+                          className="h-7 w-7 object-contain brightness-0"
+                        />
+                      </span>
+                      <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-yellow-500">
+                        Video / Image · {p.abbr}
+                      </span>
+                    </span>
+                    <h3 className="mt-4 text-2xl font-extrabold uppercase leading-tight text-white group-hover:text-yellow-500">
+                      {p.title}
+                    </h3>
+                    <span className="mt-3 inline-block text-sm font-bold uppercase tracking-[0.04em] text-yellow-500">
+                      Explore Defense →
+                    </span>
                   </span>
                 </Link>
               </StaggerItem>
