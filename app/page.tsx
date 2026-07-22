@@ -206,18 +206,18 @@ export default function Home() {
           aria-hidden
           fill
           sizes="100vw"
-          className="pointer-events-none object-cover opacity-60"
+          className="pointer-events-none object-cover opacity-80"
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.86),rgba(10,10,10,0.58)_45%,rgba(10,10,10,0.9))]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.72),rgba(10,10,10,0.42)_45%,rgba(10,10,10,0.82))]"
           aria-hidden
         />
-        <div className="relative mx-auto max-w-7xl px-4 text-center lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 text-center [text-shadow:0_2px_12px_rgba(0,0,0,0.75)] lg:px-8">
           <Reveal>
-            <h2 className="font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-[2.75rem] leading-[0.95] text-white sm:text-[3.25rem] lg:text-[4.25rem]">
               Orange County and Los Angeles Criminal Defense Lawyers
             </h2>
-            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-lg leading-relaxed text-zinc-300">
+            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-xl leading-relaxed text-zinc-200">
               <p>
                 If you are facing criminal charges, you need an experienced
                 criminal defense lawyer who knows the local courts, prosecutors,
@@ -245,10 +245,10 @@ export default function Home() {
             delay={0.1}
             className="mx-auto mt-12 max-w-3xl border-t border-white/15 pt-10"
           >
-            <h3 className="font-display text-2xl text-white lg:text-3xl">
+            <h3 className="font-display text-[1.75rem] text-white lg:text-[2.25rem]">
               About Our Orange County and Los Angeles Criminal Defense Lawyers
             </h3>
-            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-zinc-300">
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-zinc-200">
               Founded by Charles and his wife Beatrice in 2024, Farris Law Firm
               brings a refreshing approach to criminal law in Southern
               California. Having managed thousands of misdemeanor and felony
