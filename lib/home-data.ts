@@ -157,10 +157,6 @@ export const BADGES = [
   },
   { src: "/wp-content/uploads/google-screened.png", alt: "Google Screened" },
   {
-    src: "/wp-content/uploads/badge_million_dollar_advocates.png",
-    alt: "Million Dollar Advocates Forum",
-  },
-  {
     src: "/wp-content/uploads/san-fernand-valley-bar.png",
     alt: "San Fernando Valley Bar Association",
   },
