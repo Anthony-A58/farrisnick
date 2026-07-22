@@ -138,25 +138,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Badges */}
+      {/* Credentials: full-color certificate logos on uniform white cards */}
       <section className="border-b border-hairline bg-night">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-4 py-6 lg:justify-between lg:px-8">
-          <p className="text-sm font-semibold text-zinc-300">
+        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+          <p className="text-center text-sm font-semibold text-zinc-400">
             <span className="text-yellow-500" aria-hidden>
               ★★★★★
             </span>{" "}
             Rated 5.0 by clients on Google and Avvo
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             {BADGES.map((b) => (
-              <Image
+              <span
                 key={b.src}
-                src={b.src}
-                alt={b.alt}
-                width={90}
-                height={44}
-                className="h-9 w-auto object-contain brightness-0 invert opacity-50 transition hover:opacity-90"
-              />
+                className="flex h-20 w-32 items-center justify-center rounded-xl bg-white px-4 py-3 shadow-[0_6px_18px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5"
+              >
+                <Image
+                  src={b.src}
+                  alt={b.alt}
+                  width={160}
+                  height={80}
+                  className="h-full w-full object-contain"
+                />
+              </span>
             ))}
           </div>
         </div>

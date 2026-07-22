@@ -151,8 +151,14 @@ export const WHY_CHOOSE = [
 
 export const BADGES = [
   { src: "/wp-content/uploads/california-bar.png", alt: "State Bar of California" },
+  {
+    src: "/wp-content/uploads/avvo.png",
+    alt: "Avvo — 5 stars, Charles P. Farris",
+  },
   { src: "/wp-content/uploads/google-screened.png", alt: "Google Screened" },
-  { src: "/wp-content/uploads/badge_million_dollar_advocates.png", alt: "Million Dollar Advocates Forum" },
-  { src: "/wp-content/uploads/san-fernand-valley-bar.png", alt: "San Fernando Valley Bar Association" },
+  {
+    src: "/wp-content/uploads/san-fernand-valley-bar.png",
+    alt: "San Fernando Valley Bar Association",
+  },
   { src: "/wp-content/uploads/provisors.png", alt: "ProVisors" },
 ];
