@@ -112,6 +112,30 @@ export const TESTIMONIALS = [
     author: "B.S.",
     caseType: "Traffic citation, dismissed",
   },
+  {
+    quote:
+      "Charles helped me get through my DUI case and to get it dropped to a lesser sentencing. A pro lawyer and a great human. Thank you",
+    author: "GokS",
+    caseType: "DUI reduced",
+  },
+  {
+    quote:
+      "Charles and his team are absolutely lovely to work with! They are responsive, thoughtful and great at what they do. They were able to get a speeding ticket dismissed. I am so very grateful for their hard work. I can not recommend them enough.",
+    author: "P. DiVito",
+    caseType: "Speeding ticket dismissed",
+  },
+  {
+    quote:
+      "Charles was incredibly helpful in walking me through the process to get a medical suspension lifted on my drivers license. He was very thoughtful and always very easy to get a hold of.",
+    author: "A. McGanty",
+    caseType: "License suspension lifted",
+  },
+  {
+    quote:
+      "I highly recommend Charles Farris. He was very helpful and kept to his promises. Always willing to work hard for you. He will always be my lawyer.",
+    author: "R. Garcia",
+    caseType: "Criminal defense client",
+  },
 ];
 
 export const FAQS = [
