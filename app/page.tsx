@@ -286,7 +286,7 @@ export default function Home() {
               <StaggerItem key={p.href + p.title}>
                 <Link
                   href={p.href}
-                  className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"
+                  className="group relative flex aspect-[5/3] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"
                 >
                   {/* Media slot: a video or image drops in here later */}
                   <span
