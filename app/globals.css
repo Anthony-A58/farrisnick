@@ -49,24 +49,7 @@ body {
   margin: 0;
 }
 .cutout {
-  background: repeating-linear-gradient(
-    115deg,
-    #e4e4e7,
-    #e4e4e7 8px,
-    #a1a1aa 8px,
-    #a1a1aa 16px
-  );
-  background-size: 300px 200px;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: pan 12s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .cutout {
-    animation: none;
-  }
+  color: #ffffff;
 }
 
 /* Video-as-text-fill: the police-light clip plays through the glyphs on a
