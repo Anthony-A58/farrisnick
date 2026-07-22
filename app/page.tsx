@@ -197,56 +197,58 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Intro: preserved SEO copy */}
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[1fr_0.85fr] lg:gap-16 lg:px-8 lg:py-24">
-        <Reveal>
-          <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
-            Orange County and Los Angeles Criminal Defense Lawyers
-          </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-zinc-400">
-            <p>
-              If you are facing criminal charges, you need an experienced
-              criminal defense lawyer who knows the local courts, prosecutors,
-              and legal procedures. At Farris Law Firm, we provide aggressive,
-              strategic defense representation to clients throughout Orange
-              County and Los Angeles County, with offices in Aliso Viejo and
-              Burbank so we are close to the courthouse wherever your case is
-              heard.
-            </p>
-            <p>
-              We are committed to protecting your rights, your record, and your
-              future. During this experience with the criminal justice system,
-              you need clear guidance, honest communication, and a defense
-              strategy tailored to your specific case. That is what we deliver,
-              every time.
-            </p>
-            <p>
-              From investigation through trial, we stand by your side at every
-              stage of the process, educating you about the system, addressing
-              your concerns, and strategizing on your behalf.
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="relative">
-            <div
-              className="absolute -left-3 -top-3 h-full w-full border-2 border-yellow-500"
-              aria-hidden
-            />
-            <Image
-              src="/wp-content/uploads/info-image-new.webp"
-              alt="Criminal defense representation at every stage of the process"
-              width={588}
-              height={528}
-              className="relative w-full object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
-          </div>
-          <div className="mt-6 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal p-6 text-white">
-            <h3 className="font-display text-xl">
+      {/* Intro: preserved SEO copy, centered over a shadowy LA skyline */}
+      <section className="relative overflow-hidden border-y border-hairline bg-night py-16 lg:py-24">
+        {/* Faded, dark skyline behind the copy */}
+        <Image
+          src="/wp-content/uploads/pexels-badun-17445604.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="pointer-events-none object-cover opacity-60"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.86),rgba(10,10,10,0.58)_45%,rgba(10,10,10,0.9))]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-7xl px-4 text-center lg:px-8">
+          <Reveal>
+            <h2 className="font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-6xl">
+              Orange County and Los Angeles Criminal Defense Lawyers
+            </h2>
+            <div className="mx-auto mt-8 max-w-4xl space-y-5 text-lg leading-relaxed text-zinc-300">
+              <p>
+                If you are facing criminal charges, you need an experienced
+                criminal defense lawyer who knows the local courts, prosecutors,
+                and legal procedures. At Farris Law Firm, we provide aggressive,
+                strategic defense representation to clients throughout Orange
+                County and Los Angeles County, with offices in Aliso Viejo and
+                Burbank so we are close to the courthouse wherever your case is
+                heard.
+              </p>
+              <p>
+                We are committed to protecting your rights, your record, and
+                your future. During this experience with the criminal justice
+                system, you need clear guidance, honest communication, and a
+                defense strategy tailored to your specific case. That is what we
+                deliver, every time.
+              </p>
+              <p>
+                From investigation through trial, we stand by your side at every
+                stage of the process, educating you about the system, addressing
+                your concerns, and strategizing on your behalf.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal
+            delay={0.1}
+            className="mx-auto mt-12 max-w-3xl border-t border-white/15 pt-10"
+          >
+            <h3 className="font-display text-2xl text-white lg:text-3xl">
               About Our Orange County and Los Angeles Criminal Defense Lawyers
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-zinc-300">
               Founded by Charles and his wife Beatrice in 2024, Farris Law Firm
               brings a refreshing approach to criminal law in Southern
               California. Having managed thousands of misdemeanor and felony
@@ -256,12 +258,12 @@ export default function Home() {
             </p>
             <Link
               href="/about-us/"
-              className="mt-4 inline-block text-sm font-bold uppercase tracking-[0.04em] text-yellow-500 hover:text-yellow-300"
+              className="mt-5 inline-block font-bold uppercase tracking-[0.04em] text-yellow-500 hover:text-yellow-300"
             >
               Meet Charles and Beatrice →
             </Link>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* Practice areas bento */}
