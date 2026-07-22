@@ -410,39 +410,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-night py-16 lg:py-24">
+      {/* Testimonials: auto-scrolling carousel of equal-size cards */}
+      <section className="marquee overflow-hidden bg-night py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal>
             <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
               The Verdict Is In
             </h2>
           </Reveal>
-          <StaggerGroup className="mt-10 grid gap-6 md:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <StaggerItem key={t.author} className={i === 1 ? "md:mt-8" : ""}>
-                <figure className="flex h-full flex-col border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-7">
-                  <span
-                    className="text-xl tracking-[2px] text-yellow-500"
-                    aria-hidden
-                  >
-                    ★★★★★
-                  </span>
-                  <blockquote className="mt-4 flex-1 leading-relaxed text-zinc-200">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-5 border-t border-hairline pt-4">
-                    <span className="font-extrabold text-white">
-                      {t.author}
-                    </span>
-                    <span className="block text-[13px] font-semibold uppercase tracking-[0.04em] text-zinc-500">
-                      {t.caseType}
-                    </span>
-                  </figcaption>
-                </figure>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
+        </div>
+        {/* Duplicated set so the loop is seamless; the copy is hidden from AT. */}
+        <div className="marquee-track mt-10 flex w-max items-stretch gap-6 pr-6">
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+            <figure
+              key={`${t.author}-${i}`}
+              aria-hidden={i >= TESTIMONIALS.length}
+              className="flex w-[340px] shrink-0 flex-col border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-7 sm:w-[400px]"
+            >
+              <span
+                className="text-xl tracking-[2px] text-yellow-500"
+                aria-hidden
+              >
+                ★★★★★
+              </span>
+              <blockquote className="mt-4 flex-1 leading-relaxed text-zinc-200">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-5 border-t border-hairline pt-4">
+                <span className="font-extrabold text-white">{t.author}</span>
+                <span className="block text-[13px] font-semibold uppercase tracking-[0.04em] text-zinc-500">
+                  {t.caseType}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Reveal className="mt-8">
             <Link
               href="/about/reviews/"
