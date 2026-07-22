@@ -77,12 +77,12 @@ export default function Home() {
               <h1 className="sr-only">
                 Criminal Defense Across Orange County and Los Angeles County
               </h1>
-              <VideoText
-                as="p"
+              <p
                 aria-hidden
-                className="text-6xl sm:text-7xl lg:text-8xl xl:text-[170px]"
-                text="Criminal Defense"
-              />
+                className="font-display text-6xl leading-[0.88] tracking-[-0.01em] text-white sm:text-7xl lg:text-8xl xl:text-[170px]"
+              >
+                Criminal Defense
+              </p>
             </StaggerItem>
             <StaggerItem>
               <p className="mt-6 max-w-xl text-xl font-semibold leading-relaxed text-white">
@@ -559,7 +559,7 @@ export default function Home() {
             <VideoText
               as="p"
               className="text-6xl sm:text-7xl lg:text-8xl"
-              text="We Got You"
+              text="Free Consultation"
               aria-hidden
             />
             <h2 className="mx-auto mt-6 max-w-3xl text-xl font-extrabold text-white lg:text-2xl">
