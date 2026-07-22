@@ -282,19 +282,8 @@ export default function Home() {
           {/* Uniform, equal-size cards; each has a media slot for a video or
               image, matching the original design. */}
           <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {PRACTICE_AREAS.map((p, i) => (
-              <StaggerItem
-                key={p.href + p.title}
-                // With 8 areas the last row holds 2 cards; push the final one to
-                // the right column so the empty slot sits in the center, not the
-                // corner.
-                className={
-                  PRACTICE_AREAS.length % 3 === 2 &&
-                  i === PRACTICE_AREAS.length - 1
-                    ? "lg:col-start-3"
-                    : ""
-                }
-              >
+            {PRACTICE_AREAS.map((p) => (
+              <StaggerItem key={p.href + p.title}>
                 <Link
                   href={p.href}
                   className="group relative flex min-h-[340px] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"

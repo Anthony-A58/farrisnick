@@ -77,6 +77,14 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     blurb: "Serious consequences under California law, especially above the damage threshold.",
   },
   {
+    title: "Traffic Offenses",
+    abbr: "TRF",
+    href: "/traffic-offenses/",
+    icon: "/wp-content/uploads/icon_traffic_new.png",
+    blurb:
+      "From reckless driving to license suspensions and hit and run, we defend the full range of serious traffic charges.",
+  },
+  {
     title: "Special Services",
     abbr: "SVC",
     href: "/practice-areas/",
