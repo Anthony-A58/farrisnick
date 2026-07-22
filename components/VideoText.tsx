@@ -16,7 +16,7 @@ export default function VideoText({
   className = "",
   ...rest
 }: {
-  as?: "h1" | "p";
+  as?: "h1" | "p" | "span";
   text: string;
   className?: string;
 } & HTMLAttributes<HTMLElement>) {

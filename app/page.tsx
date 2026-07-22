@@ -61,8 +61,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-black text-white">
+      {/* Hero (z-20 so the credential ribbon can hover over the trust bar) */}
+      <section className="relative z-20 bg-black text-white">
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-0 lg:pt-20">
           <StaggerGroup>
             <StaggerItem>
@@ -71,10 +71,13 @@ export default function Home() {
               </p>
             </StaggerItem>
             <StaggerItem>
-              <VideoText
-                className="text-5xl sm:text-6xl lg:text-7xl xl:text-[92px]"
-                text="Criminal Defense Across Orange County and Los Angeles County"
-              />
+              {/* Only the first line plays the clip; the rest is solid white. */}
+              <h1 className="text-5xl leading-[0.88] sm:text-6xl lg:text-7xl xl:text-[92px]">
+                <VideoText as="span" text="Criminal Defense" />
+                <span className="font-display block tracking-[-0.01em] text-white">
+                  Across Orange County and Los Angeles County
+                </span>
+              </h1>
             </StaggerItem>
             <StaggerItem>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300">
@@ -103,6 +106,42 @@ export default function Home() {
               className="relative z-10 w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
               sizes="(min-width: 1024px) 45vw, 1px"
             />
+            {/* Credential ribbon: circular medallions hovering over the divide
+                between the black hero and the yellow trust bar, below his
+                hands, sized a touch larger than his hands. */}
+            <div className="absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center gap-3">
+              {[
+                {
+                  src: "/wp-content/uploads/california-bar.png",
+                  alt: "State Bar of California",
+                },
+                {
+                  src: "/wp-content/uploads/Untitled.png",
+                  alt: "Avvo — 5 stars, Charles P. Farris",
+                },
+                {
+                  src: "/wp-content/uploads/provisors-mark.png",
+                  alt: "ProVisors",
+                },
+                {
+                  src: "/wp-content/uploads/sfv-emblem.png",
+                  alt: "San Fernando Valley Bar Association",
+                },
+              ].map((c) => (
+                <span
+                  key={c.src}
+                  className="h-[104px] w-[104px] overflow-hidden rounded-full bg-white shadow-[0_10px_28px_rgba(0,0,0,0.55)]"
+                >
+                  <Image
+                    src={c.src}
+                    alt={c.alt}
+                    width={120}
+                    height={120}
+                    className="h-full w-full object-cover"
+                  />
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>
