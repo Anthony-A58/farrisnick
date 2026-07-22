@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BackgroundLoop from "@/components/BackgroundLoop";
 import VideoText from "@/components/VideoText";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 import { getPage } from "@/lib/content";
@@ -199,17 +200,16 @@ export default function Home() {
 
       {/* Intro: preserved SEO copy, centered over a shadowy LA skyline */}
       <section className="relative overflow-hidden border-y border-hairline bg-night py-16 lg:py-24">
-        {/* Faded, dark skyline behind the copy */}
-        <Image
-          src="/wp-content/uploads/pexels-badun-17445604.jpg"
-          alt=""
-          aria-hidden
-          fill
-          sizes="100vw"
-          className="pointer-events-none object-cover opacity-80"
+        {/* Looping, gloomy LA skyline behind the copy */}
+        <BackgroundLoop
+          webm="/videos/la-skyline.webm"
+          mp4="/videos/la-skyline.mp4"
+          poster="/wp-content/uploads/la-skyline-poster.jpg"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
+        {/* The clip is already dark, so only a light wash to hold the text. */}
         <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.72),rgba(10,10,10,0.42)_45%,rgba(10,10,10,0.82))]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.5),rgba(10,10,10,0.32)_45%,rgba(10,10,10,0.66))]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-7xl px-4 text-center [text-shadow:0_2px_12px_rgba(0,0,0,0.75)] lg:px-8">
