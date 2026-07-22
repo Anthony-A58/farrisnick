@@ -19,70 +19,77 @@ export type PracticeArea = {
   href: string;
   icon: string;
   blurb: string;
-  large: boolean;
+  abbr: string;
+  large?: boolean;
   wide?: boolean;
 };
 
 export const PRACTICE_AREAS: PracticeArea[] = [
   {
     title: "DUI",
+    abbr: "DUI",
     href: "/dui/",
     icon: "/wp-content/uploads/icon_dui_new.png",
     blurb:
       "DUI charges carry severe penalties in California and can impact your license, insurance, education, and career.",
-    large: true,
   },
   {
     title: "Domestic Violence",
+    abbr: "DV",
     href: "/domestic-violence/",
     icon: "/wp-content/uploads/icon_domestic_new.png",
     blurb:
       "These cases are rarely as straightforward as they seem, and the accused often have strong defenses.",
-    large: true,
   },
   {
     title: "Weapons Charges",
+    abbr: "GUN",
     href: "/guns/",
     icon: "/wp-content/uploads/icon_guns_new.png",
     blurb: "California's gun laws are strict. One missed rule can land you in criminal court.",
-    large: false,
   },
   {
     title: "Drug Offenses",
+    abbr: "DRG",
     href: "/drugs/",
     icon: "/wp-content/uploads/icon_drugs_new.png",
     blurb: "From possession to distribution, we defend every type of drug charge.",
-    large: false,
   },
   {
     title: "Assault and Battery",
+    abbr: "A&B",
     href: "/assault/",
     icon: "/wp-content/uploads/icon_assault_new.png",
     blurb: "Assault charges carry fines and jail time. Experienced representation matters.",
-    large: false,
   },
   {
     title: "Theft and Robbery",
+    abbr: "THF",
     href: "/theft/",
     icon: "/wp-content/uploads/icon_theft_new.png",
     blurb: "From shoplifting to robbery, we defend individuals charged with property crimes.",
-    large: false,
   },
   {
     title: "Vandalism",
+    abbr: "VAN",
     href: "/vandalism/",
     icon: "/wp-content/uploads/icon_vandalism_new.png",
     blurb: "Serious consequences under California law, especially above the damage threshold.",
-    large: false,
-    wide: true,
+  },
+  {
+    title: "Traffic Offenses",
+    abbr: "TRF",
+    href: "/traffic-offenses/",
+    icon: "/wp-content/uploads/icon_traffic_new.png",
+    blurb:
+      "From reckless driving to license suspensions and hit and run, we defend the full range of serious traffic charges.",
   },
   {
     title: "Special Services",
+    abbr: "SVC",
     href: "/practice-areas/",
     icon: "/wp-content/uploads/icon_special_new.png",
     blurb: "Pretrial diversion, bench warrant recalls, military diversion, and Veterans Court.",
-    large: false,
-    wide: true,
   },
 ];
 
