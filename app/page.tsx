@@ -281,12 +281,12 @@ export default function Home() {
           </Reveal>
           {/* Uniform, equal-size cards; each has a media slot for a video or
               image, matching the original design. */}
-          <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerGroup className="mt-8 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {PRACTICE_AREAS.map((p) => (
               <StaggerItem key={p.href + p.title}>
                 <Link
                   href={p.href}
-                  className="group relative flex min-h-[340px] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"
+                  className="group relative flex aspect-[5/3] flex-col justify-end overflow-hidden border border-neutral-800 bg-coal p-7 transition hover:-translate-y-1 hover:border-yellow-500"
                 >
                   {/* Media slot: a video or image drops in here later */}
                   <span
