@@ -119,10 +119,10 @@ export default function Home() {
       <section className="bg-yellow-500">
         <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
           {[
-            { b: "24/7", s: "Free Phone Consultations" },
+            { b: "24/7", s: "Free Consultations" },
             { b: "$0", s: "Consultation Fee" },
             { b: "2", s: "Offices · OC + LA" },
-            { b: "5.0", s: "Rated on Google and Avvo", stars: true },
+            { b: "5", s: "Rated on Google and Avvo", stars: true },
           ].map((t) => (
             <div
               key={t.s}
@@ -132,7 +132,7 @@ export default function Home() {
                 {t.b}
                 {"stars" in t && (
                   <span
-                    className="text-xl tracking-[2px] text-white lg:text-2xl"
+                    className="text-xl tracking-[2px] text-night lg:text-2xl"
                     aria-hidden
                   >
                     ★★★★★
