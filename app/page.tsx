@@ -300,16 +300,11 @@ export default function Home() {
                   />
                   <span className="relative z-[1]">
                     <span className="flex items-center gap-3">
-                      <span className="flex h-13 w-13 shrink-0 items-center justify-center bg-yellow-500 p-2.5">
-                        {/* Icons ship with the old site's red baked in; force to
-                            solid black so they sit on the yellow tag. */}
-                        <Image
-                          src={p.icon}
-                          alt=""
-                          width={44}
-                          height={44}
-                          className="h-7 w-7 object-contain brightness-0"
-                        />
+                      <span
+                        className="flex h-13 w-13 shrink-0 items-center justify-center bg-yellow-500 font-display text-2xl leading-none text-night"
+                        aria-hidden
+                      >
+                        CF
                       </span>
                       <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-yellow-500">
                         Video / Image · {p.abbr}
