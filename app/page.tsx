@@ -122,14 +122,22 @@ export default function Home() {
             { b: "24/7", s: "Free Phone Consultations" },
             { b: "$0", s: "Consultation Fee" },
             { b: "2", s: "Offices · OC + LA" },
-            { b: "5.0", s: "Rated on Google and Avvo" },
+            { b: "5.0", s: "Rated on Google and Avvo", stars: true },
           ].map((t) => (
             <div
               key={t.s}
               className="border-b border-r border-black/10 px-8 py-7 last:border-r-0 lg:border-b-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
             >
-              <b className="font-display block text-4xl leading-none text-night lg:text-5xl">
+              <b className="font-display flex items-center gap-2.5 text-4xl leading-none text-night lg:text-5xl">
                 {t.b}
+                {"stars" in t && (
+                  <span
+                    className="text-xl tracking-[2px] text-white lg:text-2xl"
+                    aria-hidden
+                  >
+                    ★★★★★
+                  </span>
+                )}
               </b>
               <small className="text-[13px] font-bold uppercase tracking-[0.06em] text-night/70">
                 {t.s}
