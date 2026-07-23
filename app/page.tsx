@@ -274,9 +274,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Practice areas: uniform media cards */}
+      {/* Practice areas: uniform media cards (wider than the site container) */}
       <section className="border-y border-hairline bg-black py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 lg:px-8">
           <Reveal>
             <h2 className="font-display text-4xl leading-[0.95] text-white lg:text-5xl">
               Are You Facing Criminal Charges?
@@ -358,21 +358,43 @@ export default function Home() {
           </Reveal>
         </div>
         <StaggerGroup className="space-y-4">
-          {WHY_CHOOSE.map((w, i) => (
-            <StaggerItem key={w.title}>
-              <div className="flex gap-6 border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-6 transition hover:border-yellow-500">
-                <span className="font-display text-3xl text-yellow-500">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg font-extrabold text-white">
-                    {w.title}
-                  </h3>
-                  <p className="mt-2 leading-relaxed text-zinc-400">{w.body}</p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
+          {WHY_CHOOSE.map((w, i) => {
+            const num = String(i + 1).padStart(2, "0");
+            return (
+              <StaggerItem key={w.title}>
+                <details
+                  open={i === 0}
+                  className="group border border-neutral-800 border-t-2 border-t-yellow-500 bg-coal-deep p-6 transition hover:border-yellow-500"
+                >
+                  <summary className="flex cursor-pointer list-none items-center gap-6 [&::-webkit-details-marker]:hidden">
+                    <span className="font-display text-3xl leading-none text-yellow-500">
+                      {num}
+                    </span>
+                    <h3 className="flex-1 text-lg font-extrabold text-white">
+                      {w.title}
+                    </h3>
+                    <span
+                      className="font-display text-2xl leading-none text-yellow-500 transition-transform duration-200 group-open:rotate-45"
+                      aria-hidden
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <div className="mt-3 flex gap-6">
+                    <span
+                      className="invisible font-display text-3xl leading-none"
+                      aria-hidden
+                    >
+                      {num}
+                    </span>
+                    <p className="flex-1 leading-relaxed text-zinc-400">
+                      {w.body}
+                    </p>
+                  </div>
+                </details>
+              </StaggerItem>
+            );
+          })}
         </StaggerGroup>
       </section>
 
