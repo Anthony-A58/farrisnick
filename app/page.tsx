@@ -152,7 +152,7 @@ export default function Home() {
             {BADGES.map((b) => (
               <span
                 key={b.src}
-                className="flex h-20 w-32 items-center justify-center rounded-xl bg-white px-4 py-3 shadow-[0_6px_18px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5"
+                className="flex h-20 w-32 items-center justify-center rounded-xl bg-[#efe3bb] px-4 py-3 shadow-[0_6px_18px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5"
               >
                 <Image
                   src={b.src}
